@@ -1,0 +1,13 @@
+1
+test
+[aaa, bbb]
+{
+
+	"age":1,
+	"other":[
+			"aaa",
+		"bbb"
+	],
+	"title":"test"
+}
+/{"age":1,"other":["aaa","bbb"],"title":"test"}

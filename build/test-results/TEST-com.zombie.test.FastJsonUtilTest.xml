@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.zombie.test.FastJsonUtilTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-04-15T09:30:56" hostname="chenpengpengdeiMac.local" time="0.423">
+  <properties/>
+  <testcase name="stringToVo" classname="com.zombie.test.FastJsonUtilTest" time="0.388"/>
+  <testcase name="toPrettyString" classname="com.zombie.test.FastJsonUtilTest" time="0.003"/>
+  <testcase name="toStringTest" classname="com.zombie.test.FastJsonUtilTest" time="0.001"/>
+  <system-out><![CDATA[1
+test
+[aaa, bbb]
+{
+	"age":1,
+	"other":[
+		"aaa",
+		"bbb"
+	],
+	"title":"test"
+}
+{"age":1,"other":["aaa","bbb"],"title":"test"}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

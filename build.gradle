@@ -1,0 +1,56 @@
+group 'com.zombie'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+configurations {
+    agent
+}
+repositories {
+    maven {
+        url "http://192.168.16.214:8081/repository/maven-public/"
+    }
+    mavenCentral()
+}
+
+dependencies {
+    testCompile(
+            'org.testng:testng:6.8.21',
+            "ru.yandex.qatools.allure:allure-testng-adaptor:1.5.0-RC1"
+    )
+    compile(
+            'com.jayway.restassured:rest-assured:2.9.0',
+            'com.jayway.restassured:json-schema-validator:2.9.0',
+            'com.jayway.restassured:scala-support:2.9.0',
+            'org.apache.logging.log4j:log4j-api:2.2',
+            'org.apache.logging.log4j:log4j-core:2.2',
+            'org.slf4j:slf4j-jdk14:1.5.6',
+            'com.alibaba:fastjson:1.2.8',
+            'com.google.code.gson:gson:2.3.1',
+            'org.codehaus.jackson:jackson-mapper-asl:1.9.11',
+            'com.alibaba:fastjson:1.2.8'
+    )
+    agent "org.aspectj:aspectjweaver:1.8.8"
+
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.10'
+}
+
+task copyJars(type:Copy){
+    from configurations.runtime
+    into 'libs'
+}
+
+test.doFirst {
+    jvmArgs "-javaagent:${configurations.agent.singleFile}"
+}
+
+test {
+    useTestNG() {
+        suiteXmlFiles << new File(rootDir, "testng.xml")
+    }
+}
