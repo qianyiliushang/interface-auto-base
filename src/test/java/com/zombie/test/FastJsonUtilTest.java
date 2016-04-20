@@ -1,6 +1,6 @@
 package com.zombie.test;
 
-import com.zombie.utils.FastJsonUtil;
+import com.zombie.utils.json.FastJsonUtil;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 

@@ -1,4 +1,4 @@
-package com.zombie.utils;
+package com.zombie.utils.json;
 
 import com.google.gson.Gson;
 import org.codehaus.jackson.*;

@@ -1,4 +1,4 @@
-package com.zombie.utils;
+package com.zombie.utils.json;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.Feature;
