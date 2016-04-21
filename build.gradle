@@ -3,7 +3,8 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 
-sourceCompatibility = 1.8
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 configurations {
     agent
@@ -16,10 +17,7 @@ repositories {
 }
 
 dependencies {
-    testCompile(
-            'org.testng:testng:6.8.21',
-            "ru.yandex.qatools.allure:allure-testng-adaptor:1.5.0-RC1"
-    )
+    agent "org.aspectj:aspectjweaver:1.8.8"
     compile(
             'com.jayway.restassured:rest-assured:2.9.0',
             'com.jayway.restassured:json-schema-validator:2.9.0',
@@ -36,7 +34,11 @@ dependencies {
             'org.apache.poi:poi-ooxml-schemas:3.14',
             'org.apache.poi:poi-scratchpad:3.14',
     )
-    agent "org.aspectj:aspectjweaver:1.8.8"
+    testCompile(
+            'org.testng:testng:6.8.21',
+            "ru.yandex.qatools.allure:allure-testng-adaptor:1.5.0-RC1"
+    )
+
 
 }
 
