@@ -3,10 +3,7 @@ package com.zombie.utils.base;
 import java.util.regex.Pattern;
 
 /**
- * @Desc:正则表达式工具类，验证数据是否符合规范
- * @File:RegexUtils.java
- * @Author:chenpengpeng
- * @Date:16/4/20
+ * 正则表达式工具类，验证数据是否符合规范
  */
 public class RegexUtils {
     /**

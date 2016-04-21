@@ -7,11 +7,6 @@ import java.util.Map;
 
 /**
  * 判断对象、字符串、集合是否为空、不为空
- *
- * @Project:interface-auto-base
- * @file:ValidateHelper.java
- * @Author:chenpengpeng
- * @data:2016年4月20日
  */
 public final class ValidateHelper {
 
@@ -19,6 +14,7 @@ public final class ValidateHelper {
      * 判断数组是否为空
      *
      * @param array
+     *
      * @return boolean
      */
     @SuppressWarnings("unused")
@@ -34,6 +30,7 @@ public final class ValidateHelper {
      * 判断数组是否不为空
      *
      * @param array
+     *
      * @return boolean
      */
     public static <T> boolean isNotEmptyArray(T[] array) {
@@ -48,6 +45,7 @@ public final class ValidateHelper {
      * 判断字符串是否为空
      *
      * @param string
+     *
      * @return boolean
      */
     public static boolean isEmptyString(String string) {
@@ -62,6 +60,7 @@ public final class ValidateHelper {
      * 判断字符串是否不为空
      *
      * @param string
+     *
      * @return boolean
      */
     public static boolean isNotEmptyString(String string) {
@@ -76,6 +75,7 @@ public final class ValidateHelper {
      * 判断集合是否为空
      *
      * @param collection
+     *
      * @return boolean
      */
     public static boolean isEmptyCollection(Collection<?> collection) {
@@ -90,6 +90,7 @@ public final class ValidateHelper {
      * 判断集合是否不为空
      *
      * @param collection
+     *
      * @return boolean
      */
     public static boolean isNotEmptyCollection(Collection<?> collection) {
@@ -104,6 +105,7 @@ public final class ValidateHelper {
      * 判断map集合是否不为空
      *
      * @param map
+     *
      * @return boolean
      */
     @SuppressWarnings("rawtypes")
@@ -119,6 +121,7 @@ public final class ValidateHelper {
      * 判断map集合是否为空
      *
      * @param map
+     *
      * @return boolean
      */
     @SuppressWarnings("rawtypes")
@@ -134,6 +137,7 @@ public final class ValidateHelper {
      * 检验对象是否为空,String 中只有空格在对象中也算空.
      *
      * @param object
+     *
      * @return 为空返回true, 否则false.
      */
     @SuppressWarnings("rawtypes")

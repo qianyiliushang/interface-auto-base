@@ -3,10 +3,9 @@ package com.zombie.utils.base;
 import java.math.BigDecimal;
 
 /**
- * @Desc:提供精确的加减乘除运算
- * @File:BigDecimalUtils.java
- * @Author:chenpengpeng
- * @Date:16/4/20
+ * 提供精确的加减乘除运算
+ *
+ * @author chenpengpeng
  */
 public class BigDecimalUtils {
 
@@ -26,7 +25,7 @@ public class BigDecimalUtils {
      * @param v1 加数
      * @param v2 被加数
      *
-     * @return
+     * @return String
      */
     public static String add(String v1, String v2) {
         BigDecimal b1 = new BigDecimal(v1);
@@ -42,7 +41,7 @@ public class BigDecimalUtils {
      * @param v2    被除数
      * @param scale 精确精度
      *
-     * @return
+     * @return String
      */
     public static String div(String v1, String v2, int scale, int round) {
         if (scale < 0) {
@@ -60,19 +59,19 @@ public class BigDecimalUtils {
 
         BigDecimal b1 = new BigDecimal(v1);
         BigDecimal b2 = new BigDecimal(v2);
-        return b1.divide(b2, scale, BigDecimal.ROUND_HALF_UP).toString();
+        return b1.divide(b2, scale, round).toString();
     }
 
     /**
      * 比较两个数<br>
-     * v1 > v2 return 1<br>
-     * v1 = v2 return 0<br>
-     * v1 < v2 return -1
+     * v1 大于 v2 return 1<br>
+     * v1 等于 v2 return 0<br>
+     * v1 小于 v2 return -1
      *
      * @param v1 比较数
      * @param v2 被比较数
      *
-     * @return
+     * @return String
      */
     public static int compareTo(String v1, String v2) {
         BigDecimal b1 = new BigDecimal(v1);
@@ -86,7 +85,7 @@ public class BigDecimalUtils {
      * @param v1
      * @param v2
      *
-     * @return
+     * @return 较小数
      */
     public static String returnMin(String v1, String v2) {
         BigDecimal b1 = new BigDecimal(v1);
@@ -100,7 +99,7 @@ public class BigDecimalUtils {
      * @param v1
      * @param v2
      *
-     * @return
+     * @return 较大数
      */
     public static String returnMax(String v1, String v2) {
         BigDecimal b1 = new BigDecimal(v1);

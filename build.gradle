@@ -44,7 +44,7 @@ task wrapper(type: Wrapper) {
     gradleVersion = '2.10'
 }
 
-task copyJars(type:Copy){
+task copyJars(type: Copy) {
     from configurations.runtime
     into 'libs'
 }
@@ -58,3 +58,4 @@ test {
         suiteXmlFiles << new File(rootDir, "testng.xml")
     }
 }
+

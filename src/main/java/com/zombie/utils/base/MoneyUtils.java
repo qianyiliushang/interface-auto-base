@@ -4,10 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- * @Desc:货币处理工具类
- * @File:MoneyUtils.java
- * @Author:chenpengpeng
- * @Date:16/4/20
+ * 货币处理工具类
  */
 public class MoneyUtils {
 

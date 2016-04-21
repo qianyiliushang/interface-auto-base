@@ -4,10 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @Desc:字符串工具类，对字符串进行常规的处理
- * @File:StringUtils.java
- * @Author:chenpengpeng
- * @Date:16/4/20
+ * 字符串工具类，对字符串进行常规的处理
  */
 public class StringUtils {
 
@@ -16,7 +13,7 @@ public class StringUtils {
      *
      * @param str 要转换的字符
      *
-     * @return
+     * @return String
      */
     public static String changeToFull(String str) {
         String source = "1234567890!@#$%^&*()abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_=+\\|[];:'\",<.>/?";
@@ -47,7 +44,7 @@ public class StringUtils {
      *
      * @param ch 待转换的char 字符
      *
-     * @return
+     * @return String
      */
     public static String unicodeEscaped(char ch) {
         if (ch < 0x10) {
@@ -66,7 +63,7 @@ public class StringUtils {
      * @param object  要进行toString操作的对象
      * @param nullStr 返回的默认值
      *
-     * @return
+     * @return String
      */
     public String toString(Object object, String nullStr) {
         return object == null ? nullStr : object.toString();
@@ -75,12 +72,12 @@ public class StringUtils {
     /**
      * 将字符串重复N次，null、""不在循环次数里面 <br>
      * 当value == null || value == "" return value;<br>
-     * 当count <= 1 返回  value
+     * 当count 小于等于 1 返回  value
      *
      * @param value 需要循环的字符串
      * @param count 循环的次数
      *
-     * @return
+     * @return String
      */
     public static String repeatString(String value, int count) {
         if (value == null || "".equals(value) || count <= 1) {
@@ -136,7 +133,7 @@ public class StringUtils {
      *
      * @param value 待判断的字符串
      *
-     * @return
+     * @return String
      */
     public static boolean isAllLowerCase(String value) {
         if (value == null || "".equals(value)) {
@@ -155,7 +152,7 @@ public class StringUtils {
      *
      * @param value 待判断的字符串
      *
-     * @return
+     * @return String
      */
     public static boolean isAllUpperCase(String value) {
         if (value == null || "".equals(value)) {
@@ -174,7 +171,7 @@ public class StringUtils {
      *
      * @param value 待反转的字符串
      *
-     * @return
+     * @return String
      */
     public static String reverse(String value) {
         if (value == null) {
@@ -184,12 +181,12 @@ public class StringUtils {
     }
 
     /**
+     * 截取字符串，支持中英文混乱，其中中文当做两位处理
+     *
      * @param resourceString
      * @param length
      *
-     * @return
-     *
-     * @desc:截取字符串，支持中英文混乱，其中中文当做两位处理
+     * @return String
      */
     public static String subString(String resourceString, int length) {
         String resultString = "";
@@ -233,7 +230,7 @@ public class StringUtils {
      * @param htmlString
      * @param length
      *
-     * @return
+     * @return String
      */
     public static String subHTMLString(String htmlString, int length) {
         return subString(delHTMLTag(htmlString), length);
@@ -244,7 +241,7 @@ public class StringUtils {
      *
      * @param htmlStr
      *
-     * @return
+     * @return String
      */
     public static String delHTMLTag(String htmlStr) {
         String regEx_script = "<script[^>]*?>[\\s\\S]*?<\\/script>"; // 定义script的正则表达式

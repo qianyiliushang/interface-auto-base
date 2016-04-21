@@ -11,11 +11,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * @desc:时间处理工具类
- * @Project:interface-auto-base
- * @file:DateUtils.java
- * @Author:chenpengpeng
- * @date:2016年4月20日
+ * 时间处理工具类
  */
 
 
@@ -82,6 +78,7 @@ public class DateUtils {
      * 根据指定格式获取当前时间
      *
      * @param format
+     *
      * @return String
      */
     public static String getCurrentTime(String format) {
@@ -103,7 +100,9 @@ public class DateUtils {
      * 获取指定格式的当前时间：为空时格式为yyyy-mm-dd HH:mm:ss
      *
      * @param format
+     *
      * @return Date
+     *
      * @throws Exception
      */
     public static Date getCurrentDate(String format) throws Exception {
@@ -122,6 +121,7 @@ public class DateUtils {
      * 获取当前时间，格式为yyyy-MM-dd HH:mm:ss
      *
      * @return Date
+     *
      * @throws Exception
      */
     public static Date getCurrentDate() throws Exception {
@@ -134,6 +134,7 @@ public class DateUtils {
      * yyyy-mm-dd 和yyyymmss 相互转换
      *
      * @param value 日期
+     *
      * @return String
      */
     public static String stringFormat(String value) {
@@ -165,7 +166,9 @@ public class DateUtils {
      * @param year   年份  正数相加、负数相减
      * @param date   为空时，默认为当前时间
      * @param format 默认格式为：yyyy-MM-dd HH:mm:ss
+     *
      * @return String
+     *
      * @throws Exception
      */
     public static String addYearToDate(int year, Date date, String format) throws Exception {
@@ -183,7 +186,9 @@ public class DateUtils {
      * @param year   年份  正数相加、负数相减
      * @param date   为空时，默认为当前时间
      * @param format 默认格式为：yyyy-MM-dd HH:mm:ss
+     *
      * @return String
+     *
      * @throws Exception
      */
     public static String addYearToDate(int year, String date, String format) throws Exception {
@@ -201,7 +206,9 @@ public class DateUtils {
      * @param month  增加月份  正数相加、负数相减
      * @param date   指定时间
      * @param format 指定格式 为空默认 yyyy-mm-dd HH:mm:ss
+     *
      * @return String
+     *
      * @throws Exception
      */
     public static String addMothToDate(int month, Date date, String format) throws Exception {
@@ -219,7 +226,9 @@ public class DateUtils {
      * @param month  增加月份  正数相加、负数相减
      * @param date   指定时间
      * @param format 指定格式 为空默认 yyyy-mm-dd HH:mm:ss
+     *
      * @return String
+     *
      * @throws Exception
      */
     public static String addMothToDate(int month, String date, String format) throws Exception {
@@ -237,7 +246,9 @@ public class DateUtils {
      * @param day    增加天数 正数相加、负数相减
      * @param date   指定日期
      * @param format 日期格式 为空默认 yyyy-mm-dd HH:mm:ss
+     *
      * @return String
+     *
      * @throws Exception
      */
     public static String addDayToDate(int day, Date date, String format) throws Exception {
@@ -255,7 +266,9 @@ public class DateUtils {
      * @param day    增加天数 正数相加、负数相减
      * @param date   指定日期
      * @param format 日期格式 为空默认 yyyy-mm-dd HH:mm:ss
+     *
      * @return String
+     *
      * @throws Exception
      */
     public static String addDayToDate(int day, String date, String format) throws Exception {
@@ -273,7 +286,9 @@ public class DateUtils {
      * @param hour   增加小时  正数相加、负数相减
      * @param date   指定日期
      * @param format 日期格式 为空默认 yyyy-mm-dd HH:mm:ss
+     *
      * @return String
+     *
      * @throws Exception
      */
     public static String addHourToDate(int hour, Date date, String format) throws Exception {
@@ -291,7 +306,9 @@ public class DateUtils {
      * @param hour   增加小时  正数相加、负数相减
      * @param date   指定日期
      * @param format 日期格式 为空默认 yyyy-mm-dd HH:mm:ss
+     *
      * @return String
+     *
      * @throws Exception
      */
     public static String addHourToDate(int hour, String date, String format) throws Exception {
@@ -309,7 +326,9 @@ public class DateUtils {
      * @param minute 增加分钟  正数相加、负数相减
      * @param date   指定日期
      * @param format 日期格式 为空默认 yyyy-mm-dd HH:mm:ss
+     *
      * @return String
+     *
      * @throws Exception
      */
     public static String addMinuteToDate(int minute, Date date, String format) throws Exception {
@@ -327,7 +346,9 @@ public class DateUtils {
      * @param minute 增加分钟  正数相加、负数相减
      * @param date   指定日期
      * @param format 日期格式 为空默认 yyyy-mm-dd HH:mm:ss
+     *
      * @return String
+     *
      * @throws Exception
      */
     public static String addMinuteToDate(int minute, String date, String format) throws Exception {
@@ -345,7 +366,9 @@ public class DateUtils {
      * @param second 增加秒 正数相加、负数相减
      * @param date   指定日期
      * @param format 日期格式 为空默认 yyyy-mm-dd HH:mm:ss
+     *
      * @return String
+     *
      * @throws Exception
      */
     public static String addSecondToDate(int second, Date date, String format) throws Exception {
@@ -363,7 +386,9 @@ public class DateUtils {
      * @param second 增加秒 正数相加、负数相减
      * @param date   指定日期
      * @param format 日期格式 为空默认 yyyy-mm-dd HH:mm:ss
+     *
      * @return String
+     *
      * @throws Exception
      */
     public static String addSecondToDate(int second, String date, String format) throws Exception {
@@ -380,7 +405,9 @@ public class DateUtils {
      *
      * @param date   时间
      * @param format 格式
+     *
      * @return Calendar
+     *
      * @throws Exception
      */
     public static Calendar getCalendar(Date date, String format) throws Exception {
@@ -398,6 +425,7 @@ public class DateUtils {
      * 获取日期显示格式，为空默认为yyyy-mm-dd HH:mm:ss
      *
      * @param format
+     *
      * @return SimpleDateFormat
      */
     private static SimpleDateFormat getFormat(String format) {
@@ -412,7 +440,9 @@ public class DateUtils {
      *
      * @param value  需要转换的字符串
      * @param format 日期格式
+     *
      * @return Date
+     *
      * @throws Exception
      */
     public static Date string2Date(String value, String format) throws Exception {
@@ -436,6 +466,7 @@ public class DateUtils {
      *
      * @param value  需要转换的日期
      * @param format 日期格式
+     *
      * @return String
      */
     public static String date2String(Date value, String format) {
@@ -448,11 +479,14 @@ public class DateUtils {
     }
 
     /**
+     * 格式化时间
+     *
      * @param format 指定格式
-     * @return
+     *
+     * @return string
+     *
      * @throws Exception
      * @throws ParseException
-     * @desc:格式化时间
      */
     public static String formatDate(String date, String format) throws Exception {
         if (ValidateHelper.isEmpty(date) || ValidateHelper.isEmpty(format)) {
@@ -509,10 +543,13 @@ public class DateUtils {
     }
 
     /**
+     * 格式化是时间，采用默认格式（yyyy-MM-dd HH24:mm:ss）
+     *
      * @param value
-     * @return
+     *
+     * @return String
+     *
      * @throws Exception
-     * @desc:格式化是时间，采用默认格式（yyyy-MM-dd HH24:mm:ss）
      */
     public static String formatDate(String value) throws Exception {
         return getFormat(DateUtils.DATE_FORMAT2).format(string2Date(value, DateUtils.DATE_FORMAT2));
@@ -523,6 +560,7 @@ public class DateUtils {
      * 获取指定日期的年份
      *
      * @param value 日期
+     *
      * @return int
      */
     public static int getCurrentYear(Date value) {
@@ -534,7 +572,9 @@ public class DateUtils {
      * 获取指定日期的年份
      *
      * @param value 日期
+     *
      * @return int
+     *
      * @throws Exception
      */
     public static int getCurrentYear(String value) throws Exception {
@@ -547,6 +587,7 @@ public class DateUtils {
      * 获取指定日期的月份
      *
      * @param value 日期
+     *
      * @return int
      */
     public static int getCurrentMonth(Date value) {
@@ -558,7 +599,9 @@ public class DateUtils {
      * 获取指定日期的月份
      *
      * @param value 日期
+     *
      * @return int
+     *
      * @throws Exception
      */
     public static int getCurrentMonth(String value) throws Exception {
@@ -572,6 +615,7 @@ public class DateUtils {
      * 获取指定日期的天份
      *
      * @param value 日期
+     *
      * @return int
      */
     public static int getCurrentDay(Date value) {
@@ -583,7 +627,9 @@ public class DateUtils {
      * 获取指定日期的天份
      *
      * @param value 日期
+     *
      * @return int
+     *
      * @throws Exception
      */
     public static int getCurrentDay(String value) throws Exception {
@@ -597,7 +643,9 @@ public class DateUtils {
      * 获取当前日期为星期几
      *
      * @param value 日期
+     *
      * @return String
+     *
      * @throws Exception
      */
     public static String getCurrentWeek(Date value) throws Exception {
@@ -611,7 +659,9 @@ public class DateUtils {
      * 获取当前日期为星期几
      *
      * @param value 日期
+     *
      * @return String
+     *
      * @throws Exception
      */
     public static String getCurrentWeek(String value) throws Exception {
@@ -623,6 +673,7 @@ public class DateUtils {
      * 获取指定日期的小时
      *
      * @param value 日期
+     *
      * @return int
      */
     public static int getCurrentHour(Date value) {
@@ -634,7 +685,9 @@ public class DateUtils {
      * 获取指定日期的小时
      *
      * @param value 日期
+     *
      * @return int
+     *
      * @throws Exception
      */
     public static int getCurrentHour(String value) throws Exception {
@@ -648,6 +701,7 @@ public class DateUtils {
      * 获取指定日期的分钟
      *
      * @param value 日期
+     *
      * @return int
      */
     public static int getCurrentMinute(Date value) {
@@ -659,7 +713,9 @@ public class DateUtils {
      * 获取指定日期的分钟
      *
      * @param value 日期
+     *
      * @return int
+     *
      * @throws Exception
      */
     public static int getCurrentMinute(String value) throws Exception {
@@ -679,7 +735,9 @@ public class DateUtils {
      * @param startDay 需要比较的时间 不能为空(null),需要正确的日期格式 ,如：2009-09-12
      * @param endDay   被比较的时间  为空(null)则为当前时间
      * @param stype    返回值类型   0为多少天，1为多少个月，2为多少年
+     *
      * @return int
+     *
      * @throws Exception
      */
     public static int compareDate(String startDay, String endDay, int stype) throws Exception {
@@ -726,7 +784,9 @@ public class DateUtils {
      * @param startTime 需要比较的时间 不能为空，且必须符合正确格式：2012-12-12 12:12:
      * @param endTime   需要被比较的时间 若为空则默认当前时间
      * @param type      1：小时   2：分钟   3：秒
+     *
      * @return int
+     *
      * @throws Exception
      */
     public static int compareTime(String startTime, String endTime, int type) throws Exception {
@@ -756,13 +816,14 @@ public class DateUtils {
 
     /**
      * 比较两个日期的大小。<br>
-     * 若date1 > date2 则返回 1<br>
-     * 若date1 = date2 则返回 0<br>
-     * 若date1 < date2 则返回-1
+     * 若date1 大于 date2 则返回 1<br>
+     * 若date1 等于 date2 则返回 0<br>
+     * 若date1 小于 date2 则返回-1
      *
      * @param date1
      * @param date2
      * @param format 待转换的格式
+     *
      * @return 比较结果
      */
     public static int compare(String date1, String date2, String format) {
@@ -788,7 +849,9 @@ public class DateUtils {
      * 注：value必须形如： yyyy-mm-dd hh:mm:ss[.f...] 这样的格式，中括号表示可选，否则报错！！！
      *
      * @param value
+     *
      * @return
+     *
      * @throws Exception
      */
     public static Timestamp string2Timestamp(String value) throws Exception {
@@ -802,6 +865,7 @@ public class DateUtils {
      *
      * @param value
      * @param format
+     *
      * @return
      */
     public static String timeStamp2String(Timestamp value, String format) {

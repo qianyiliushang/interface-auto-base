@@ -6,19 +6,16 @@ import com.zombie.utils.date.DateUtils;
 import java.io.File;
 
 /**
- * @Desc:文件工具类
- * @File:FileUtils.java
- * @Author:chenpengpeng
- * @Date:16/4/20
+ * 文件工具类
  */
 public class FileUtils {
     /**
+     * 判断指定路径是否存在，如果不存在，根据参数决定是否新建
+     *
      * @param filePath 指定的文件路径
      * @param isNew    true：新建、false：不新建
      *
      * @return 存在返回TRUE，不存在返回FALSE
-     *
-     * @desc:判断指定路径是否存在，如果不存在，根据参数决定是否新建
      */
     public static boolean isExist(String filePath, boolean isNew) {
         File file = new File(filePath);

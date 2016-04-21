@@ -4,6 +4,8 @@
         <classes>
             <class name="com.zombie.test.FastJsonUtilTest">
             </class>
+            <class name="com.zombie.test.CommonUtilsTest"/>
+            <class name="com.zombie.test.RandomUtilsTest"/>
         </classes>
     </test>
 </suite>

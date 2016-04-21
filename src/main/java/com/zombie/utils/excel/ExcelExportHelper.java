@@ -21,10 +21,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 /**
- * @Desc: Excel 生成通用类，为了兼容，所有 Excel 统一生成 Excel2003 即：xx.xls
- * @File:ExcelExportHelper.java
- * @Author:chenpengpeng
- * @Date:16/4/20
+ * Excel 生成通用类，为了兼容，所有 Excel 统一生成 Excel2003 即：xx.xls
  */
 public class ExcelExportHelper {
     /**
@@ -172,8 +169,6 @@ public class ExcelExportHelper {
      * @param sheetTitle 表格标题名
      * @param filePath   Excel文件保存位置
      * @param fileName   Excel文件名
-     *
-     * @return
      */
     public void exportExcelAndSave(String[] header, List<Object> excelList, String sheetTitle,
                                    String filePath, String fileName) {
@@ -279,7 +274,7 @@ public class ExcelExportHelper {
      * @param sheetTitle 表格标题名
      * @param flag       分页标识为。flag == 0001：生成多个Excel,flag == 0002：生成多个sheet
      *
-     * @return List<HSSFWorkbook>
+     * @return HSSFWorkbook List
      */
     public List<HSSFWorkbook> exportExcelForBigData(String[] header, List<Object> excelList, String sheetTitle,
                                                     String flag) {
@@ -328,7 +323,7 @@ public class ExcelExportHelper {
      * @param sheetTitle 表格标题名
      * @param flag       分页标识为。flag == 0001：生成多个Excel,flag == 0002：生成多个sheet
      *
-     * @return List<HSSFWorkbook>
+     * @return HSSFWorkbook List
      */
     public List<HSSFWorkbook> exportExcelForBigData(String[] header, String[] properties,
                                                     List<Object> excelList, String sheetTitle, String flag) {
@@ -378,8 +373,6 @@ public class ExcelExportHelper {
      * @param flag       分页标识为。flag == 0001：生成多个Excel,flag == 0002：生成多个sheet
      * @param filePath   文件保存路径
      * @param fileName   保存文件名
-     *
-     * @return
      */
     public void exportExcelForBigDataAndSave(String[] header, List<Object> excelList, String sheetTitle,
                                              String flag, String filePath, String fileName) {
@@ -445,8 +438,6 @@ public class ExcelExportHelper {
      * @param filePath   文件保存路径
      * @param excelName  Excel文件名
      * @param zipName    zip文件名
-     *
-     * @return
      */
     public void exportExcelForBigDataAndZipAndSave(String[] header, List<Object> excelList, String sheetTitle,
                                                    String flag, String filePath, String excelName, String zipName) {
@@ -476,8 +467,6 @@ public class ExcelExportHelper {
      * @param excelName  Excel文件名
      * @param zipName    ZIP文件名
      *
-     * @author chenssy
-     * @date 2014年6月19日 下午8:24:21
      * @version 1.0
      */
     public void exportExcelForBigDataAndZipAndSave(String[] header, String[] properties, List<Object> excelList, String sheetTitle,
@@ -647,7 +636,6 @@ public class ExcelExportHelper {
      * @param sheetTitle
      *
      * @return
-
      */
     private String getSheetTitle(String sheetTitle) {
         String title = null;

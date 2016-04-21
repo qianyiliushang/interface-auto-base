@@ -4,10 +4,7 @@ import java.io.*;
 import java.util.Collection;
 
 /**
- * @Desc:克隆工具类，进行深克隆,包括对象、集合
- * @File:CloneUtils.java
- * @Author:chenpengpeng
- * @Date:16/4/20
+ * 克隆工具类，进行深克隆,包括对象、集合
  */
 public class CloneUtils {
 
