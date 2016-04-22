@@ -29,16 +29,16 @@ public class ParamsBuilder {
      *
      * @return url
      */
-    public static URL paramsBuiler(String uri, Map<Object, Object> paramsMap) {
+    public static URL paramsBuiler(String uri, Map<String, Object> paramsMap) {
         List<NameValuePair> nameValuePairList = new ArrayList<>();
         String params = null;
         String destURL = ConfigUtil.get("baseURL");
         URL url = null;
         // final StringBuilder result = new StringBuilder();
         if (ValidateHelper.isNotEmptyMap(paramsMap)) {
-            Iterator<Map.Entry<Object, Object>> iterator = paramsMap.entrySet().iterator();
+            Iterator<Map.Entry<String, Object>> iterator = paramsMap.entrySet().iterator();
             while (iterator.hasNext()) {
-                Map.Entry<Object, Object> entry = iterator.next();
+                Map.Entry<String, Object> entry = iterator.next();
                 nameValuePairList.add(new BasicNameValuePair(entry.getKey().toString(), entry.getValue().toString()));
             }
             params = CommonUtils.format(nameValuePairList);

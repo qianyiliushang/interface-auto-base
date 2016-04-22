@@ -17,9 +17,11 @@ public class HttpHelperTest {
 
 
     public void jsonPostTest() {
-        // request = FastJsonUtil.objectToJsonString(request);
-        //System.out.println(request);
-        //System.out.println(GsonUtils.formatJsonString(request));
+
         String jsonResonse = HttpHelper.doJsonPost(request, "/api/pb/v1/goods/filterByBrand");
+    }
+
+    public void formDataPost() {
+        String jsonResonse = HttpHelper.doFormDataPost(request, "/api/pb/v1/goods/filterByBrand");
     }
 }
