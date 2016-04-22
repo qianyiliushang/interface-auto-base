@@ -1,6 +1,7 @@
 package com.zombie.utils.base;
 
 import com.zombie.utils.config.ConfigUtil;
+import com.zombie.utils.json.GsonUtils;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.slf4j.Logger;
@@ -33,6 +34,7 @@ public class ParamsBuilder {
         String params = null;
         String destURL = ConfigUtil.get("baseURL");
         URL url = null;
+        // final StringBuilder result = new StringBuilder();
         if (ValidateHelper.isNotEmptyMap(paramsMap)) {
             Iterator<Map.Entry<Object, Object>> iterator = paramsMap.entrySet().iterator();
             while (iterator.hasNext()) {
@@ -50,5 +52,25 @@ public class ParamsBuilder {
             logger.error("构建URL失败");
         }
         return url;
+    }
+
+
+    public static String getFormData(Object object) {
+        Map<String, Object> formMap = GsonUtils.jsonObjectToMap(object);
+        final StringBuilder result = new StringBuilder();
+        if (ValidateHelper.isNotEmptyMap(formMap)) {
+            Iterator<Map.Entry<String, Object>> iterator = formMap.entrySet().iterator();
+            while (iterator.hasNext()) {
+                if (result.length() > 0) {
+                    result.append("&");
+                }
+                Map.Entry entry = iterator.next();
+                result.append(entry.getKey()).append("=").append(entry.getValue());
+            }
+
+        }
+
+
+        return result.toString();
     }
 }

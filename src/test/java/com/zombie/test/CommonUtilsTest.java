@@ -1,9 +1,12 @@
 package com.zombie.test;
 
+import com.zombie.bean.GetBrandRequest;
 import com.zombie.bean.SimpleEnum;
 import com.zombie.utils.base.CommonUtils;
+import com.zombie.utils.base.ParamsBuilder;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -18,6 +21,7 @@ import static org.testng.Assert.assertTrue;
 
 @Test
 public class CommonUtilsTest {
+
 
     public void arraysToString() {
         String[] strArray = {"aaa", "bbbb", "ccc"};
@@ -50,4 +54,6 @@ public class CommonUtilsTest {
             System.out.println(ss[i]);
         }
     }
+
+
 }

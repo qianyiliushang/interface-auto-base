@@ -1,6 +1,8 @@
 package com.zombie.http;
 
+import com.zombie.utils.base.ParamsBuilder;
 import com.zombie.utils.base.URLBuilder;
+import com.zombie.utils.json.GsonUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,25 +17,25 @@ public class HttpHelper {
     private static Logger logger = LoggerFactory.getLogger(HttpHelper.class);
 
 
+    /**
+     * 发送json格式的请求,并返回json格式的String
+     *
+     * @param request 请求的body体,可以是javaBean,或者直接是json字符串
+     * @param uri     接口地址,不包括服务器IP,端口,上下文,需要在config.properties中配置BaseURL
+     *
+     * @return json字符串
+     */
     public static String doJsonPost(Object request, String uri) {
         DataOutputStream outputStream = null;
         String jsonResponse = null;
-        // String jsonRequest = FastJsonUtil.toPrettyJSONString(request);
-        String jsonRequest = request.toString();
+        String jsonRequest = GsonUtils.parseJson(request);
+
         URL url = URLBuilder.builder(uri);
         logger.info("request url:{}", url);
-        logger.info("request params:{}", jsonRequest);
+        logger.info("request params:\n{}", jsonRequest);
 
         try {
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setDoOutput(true);
-            connection.setUseCaches(false);
-            connection.setConnectTimeout(15 * 1000);
-            connection.setRequestMethod("POST");
-            connection.setRequestProperty("Accept", "application/json");
-            connection.setRequestProperty("Accept-Language", "zh-CN");
-            connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
-            connection.setRequestProperty("Accept-Charset", "UTF-8");
+            HttpURLConnection connection = HttpURLConnectionFactory.jsonConnection(url);
             byte[] bs = jsonRequest.getBytes();
             connection.setRequestProperty("Content-Length", String.valueOf(bs.length));
             outputStream = new DataOutputStream(connection.getOutputStream());
@@ -57,7 +59,45 @@ public class HttpHelper {
                 logger.error("IOException:{}", e.getMessage());
             }
         }
-        logger.info("response is:{}", jsonResponse);
+        logger.info("response is:\n{}", jsonResponse);
+
+        return jsonResponse;
+    }
+
+    public static String postFormData(Object request, String uri) {
+        DataOutputStream outputStream = null;
+        String jsonResponse = null;
+        String jsonRequest = GsonUtils.parseJson(request);
+
+        URL url = URLBuilder.builder(uri);
+        logger.info("request url:{}", url);
+        logger.info("request params:\n{}", jsonRequest);
+        String param = ParamsBuilder.getFormData(request);
+        byte[] bs = param.getBytes();
+        HttpURLConnection connection = HttpURLConnectionFactory.getBasicConnection(url);
+        connection.setRequestProperty("Content-Length", String.valueOf(bs.length));
+        try {
+            outputStream = new DataOutputStream(connection.getOutputStream());
+            outputStream.write(bs);
+            outputStream.flush();
+            if (connection.getResponseCode() == 200) {
+                jsonResponse = successResponse(connection);
+            } else {
+                jsonResponse = errorRespose(connection);
+            }
+
+        } catch (IOException e) {
+            logger.error("IOException:{}", e.getMessage());
+        } finally {
+            try {
+                if (outputStream != null)
+                    outputStream.close();
+
+            } catch (IOException e) {
+                logger.error("IOException:{}", e.getMessage());
+            }
+        }
+        logger.info("response is:\n{}", jsonResponse);
 
         return jsonResponse;
     }
@@ -86,21 +126,6 @@ public class HttpHelper {
     }
 
 
-/*
-    private static String bytesToJsonResoponse(byte[] bytes) {
-        String jsonResponse = null;
-        try {
-            jsonResponse = new String(bytes, "UTF-8");
-            jsonResponse = FastJsonUtil.toPrettyJSONString(jsonResponse);
-
-        } catch (UnsupportedEncodingException e) {
-            logger.error("encoding error:{}", e.getMessage());
-        }
-
-        return jsonResponse;
-    }
-*/
-
     private static String successResponse(HttpURLConnection connection) {
         InputStream inputStream = null;
         try {
@@ -114,7 +139,7 @@ public class HttpHelper {
         String jsonResponse = null;
         try {
             jsonResponse = new String(inputBytes, "UTF-8");
-            //jsonResponse = FastJsonUtil.toPrettyJSONString(jsonResponse);
+            jsonResponse = GsonUtils.formatJsonString(jsonResponse);
 
         } catch (UnsupportedEncodingException e) {
             logger.error("encoding error:{}", e.getMessage());
