@@ -1,7 +1,9 @@
 group 'com.zombie'
-version '1.0-SNAPSHOT'
+version '1.0.1'
+
 
 apply plugin: 'java'
+apply plugin: 'maven'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
@@ -59,5 +61,37 @@ test {
     useTestNG() {
         suiteXmlFiles << new File(rootDir, "testng.xml")
     }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://192.168.16.214:8081/repository/imo-snapshot/") {
+                authentication(userName: "deploy", password: "passw0rd")
+            }
+            pom.project {
+                version = version
+                artifactId = rootProject.name
+                group = "$project.group"
+            }
+        }
+    }
+}
+
+install {
+    repositories.mavenInstaller {
+        pom.version = "$project.version"
+        pom.artifactId = rootProject.name
+        pom.groupId = "$project.group"
+    }
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar
 }
 

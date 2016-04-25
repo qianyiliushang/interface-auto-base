@@ -1,7 +1,7 @@
 package com.zombie.utils.base;
 
 import com.zombie.utils.config.ConfigUtil;
-import com.zombie.utils.json.GsonUtils;
+import com.zombie.utils.json.FastJsonUtil;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.slf4j.Logger;
@@ -29,12 +29,11 @@ public class ParamsBuilder {
      *
      * @return url
      */
-    public static URL paramsBuiler(String uri, Map<String, Object> paramsMap) {
+    public static URL paramsBuilder(String uri, Map<String, Object> paramsMap) {
         List<NameValuePair> nameValuePairList = new ArrayList<>();
         String params = null;
-        String destURL = ConfigUtil.get("baseURL");
+        String destURL = ConfigUtil.get("baseURL") + uri;
         URL url = null;
-        // final StringBuilder result = new StringBuilder();
         if (ValidateHelper.isNotEmptyMap(paramsMap)) {
             Iterator<Map.Entry<String, Object>> iterator = paramsMap.entrySet().iterator();
             while (iterator.hasNext()) {
@@ -43,7 +42,7 @@ public class ParamsBuilder {
             }
             params = CommonUtils.format(nameValuePairList);
 
-            destURL = destURL + uri + "?" + params;
+            destURL = destURL + "?" + params;
 
         }
         try {
@@ -54,9 +53,29 @@ public class ParamsBuilder {
         return url;
     }
 
+    public static URL paramsBuilder(String uri, Object params) {
+        //  Map<String, Object> formMap = GsonUtils.jsonObjectToMap(params);
+        Map<String, Object> formMap = FastJsonUtil.objectToMap(params);
+        return paramsBuilder(uri, formMap);
+    }
+
+
+    public static URL paramsBuilder(String uri) {
+        String baseUrl = ConfigUtil.get("baseURL");
+        try {
+            if (uri != null) {
+
+                baseUrl += uri;
+            }
+            return new URL(baseUrl);
+        } catch (MalformedURLException e) {
+            logger.error("构建URL失败,{}", e.getMessage());
+            return null;
+        }
+    }
 
     public static String getFormData(Object object) {
-        Map<String, Object> formMap = GsonUtils.jsonObjectToMap(object);
+        Map<String, Object> formMap = FastJsonUtil.objectToMap(object);
         final StringBuilder result = new StringBuilder();
         if (ValidateHelper.isNotEmptyMap(formMap)) {
             Iterator<Map.Entry<String, Object>> iterator = formMap.entrySet().iterator();
@@ -70,7 +89,7 @@ public class ParamsBuilder {
 
         }
 
-
         return result.toString();
     }
+
 }

@@ -1,11 +1,12 @@
 package com.zombie.utils.json;
 
-import com.google.gson.*;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
 import java.util.Map;
-import java.util.Set;
 import java.util.TreeMap;
 
 /**
@@ -17,7 +18,7 @@ public class GsonUtils {
     // private static Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     //重写deserialize方法,避免int,long类型被转成double
-    private static Gson gson = new GsonBuilder()
+    /*private static Gson gson = new GsonBuilder()
             .registerTypeAdapter(
                     new TypeToken<TreeMap<String, Object>>() {
                     }.getType(),
@@ -35,7 +36,9 @@ public class GsonUtils {
                             }
                             return treeMap;
                         }
-                    }).setPrettyPrinting().create();
+                    }).setPrettyPrinting().create();*/
+
+    private static Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
 
     /**

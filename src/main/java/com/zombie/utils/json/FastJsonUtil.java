@@ -4,7 +4,9 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.Feature;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * FastJson工具类
@@ -21,6 +23,12 @@ public class FastJsonUtil {
     public static final String objectToJsonString(Object object) {
         String jsonString = JSON.toJSONString(object);
         return jsonString;
+    }
+
+    public static Map<String, Object> objectToMap(Object object) {
+        Map<String, Object> resultMap = new HashMap<>();
+        resultMap = (Map) JSON.toJSON(object);
+        return resultMap;
     }
 
     /**

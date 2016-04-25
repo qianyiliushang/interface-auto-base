@@ -7,8 +7,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Map;
 
 /**
  * 使用HttpUrlConnection发送各种请求
@@ -16,6 +14,9 @@ import java.util.Map;
 public class HttpHelper {
     private static Logger logger = LoggerFactory.getLogger(HttpHelper.class);
 
+    //不允许直接创建对象
+    private HttpHelper() {
+    }
 
     /**
      * 发送json格式的请求,并返回json格式的String
@@ -39,35 +40,53 @@ public class HttpHelper {
      * @return json字符串
      */
     public static String doFormDataPost(Object request, String uri) {
-        HttpURLConnection connection = HttpURLConnectionFactory.postBasicConnection(uri);
+        HttpURLConnection connection = HttpURLConnectionFactory.basicPostConnection(uri);
         return basePost(request, connection);
     }
 
     /**
-     * @param request
-     * @param uri
+     * 发送json格式的请求,适用于请求URL后有要添加的参数,同时请求主体放在body体中,并返回json格式的String
+     *
+     * @param request 请求的body体,可以是javaBean,或者直接是json字符串
+     * @param uri     接口地址,不包括服务器IP,端口,上下文,需要在config.properties中配置BaseURL
+     * @param params  加在url后面的请求参数,支持map和javabean,其它格式未做测试
+     *
+     * @return Json String
+     */
+    public static String doJsonPost(Object request, String uri, Object params) {
+        if (params == null) {
+            return doJsonPost(request, uri);
+        }
+        HttpURLConnection connection = HttpURLConnectionFactory.postConnectionWithparams(uri, params);
+        return basePost(request, connection);
+    }
+
+
+    /**
+     * 基本的Get请求(不带参数)
+     *
+     * @param uri 接口地址,不包括服务器IP,端口,上下文,需要在config.properties中配置BaseURL
      *
      * @return
      */
-    public static String doJsonGet(Object request, String uri) {
-        String jsonResponse = null;
-        String jsonRequest = GsonUtils.parseJson(request);
-        Map<String, Object> paramsMap = GsonUtils.jsonObjectToMap(request);
-        URL url = ParamsBuilder.paramsBuiler(uri, paramsMap);
-        HttpURLConnection connection = HttpURLConnectionFactory.getBasicConnection(uri);
-        //URL url = URLBuilder.builder(uri);
-        logger.info("request url:{}", url);
-        logger.info("request params:\n{}", jsonRequest);
-        try {
-            if (connection.getResponseCode() == 200) {
-                jsonResponse = successResponse(connection);
-            } else {
-                jsonResponse = errorRespose(connection);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+    public static String doGet(String uri) {
+        HttpURLConnection connection = HttpURLConnectionFactory.basicGetConnection(uri);
+        return baseGet(connection);
+
+    }
+
+    /**
+     * @param params 追加在url后面的参数,支持map和javabean,其它格式未测试
+     * @param uri    接口地址,不包括服务器IP,端口,上下文,需要在config.properties中配置BaseURL
+     *
+     * @return
+     */
+    public static String doGet(String uri, Object params) {
+        if (params == null) {
+            return doGet(uri);
         }
-        return jsonResponse;
+        HttpURLConnection connection = HttpURLConnectionFactory.getConnectionWithParams(uri, params);
+        return baseGet(connection);
     }
 
     /**
@@ -150,7 +169,7 @@ public class HttpHelper {
             outputStream = new DataOutputStream(connection.getOutputStream());
             outputStream.write(bs);
             outputStream.flush();
-            logger.info("responsee status code is {}", connection.getResponseCode());
+            logger.info("response status code is {}", connection.getResponseCode());
             if (connection.getResponseCode() == 200) {
                 jsonResponse = successResponse(connection);
             } else {
@@ -171,6 +190,21 @@ public class HttpHelper {
 
         return jsonResponse;
 
+    }
+
+    private static String baseGet(HttpURLConnection connection) {
+        String jsonResponse = null;
+        try {
+            if (connection.getResponseCode() == 200) {
+                jsonResponse = successResponse(connection);
+            } else {
+                jsonResponse = errorRespose(connection);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return jsonResponse;
     }
 
 }
