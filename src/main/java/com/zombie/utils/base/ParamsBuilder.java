@@ -22,9 +22,9 @@ public class ParamsBuilder {
     private static Logger logger = LoggerFactory.getLogger(ParamsBuilder.class);
 
     /**
-     * 构建get请求url,需要事先在config.properties中配置好baseURL
+     * 构建get请求url,或者post请求需要在url后追加参数的情景,需要事先在config.properties中配置好baseURL
      *
-     * @param uri       接口地址
+     * @param uri       接口地址,不包括服务器IP,端口,上下文,需要在config.properties中配置BaseURL
      * @param paramsMap 参数map
      *
      * @return url
@@ -48,11 +48,55 @@ public class ParamsBuilder {
         try {
             url = new URL(destURL);
         } catch (MalformedURLException e) {
-            logger.error("构建URL失败");
+            logger.error("构建URL失败,{}", e.getMessage());
         }
         return url;
     }
 
+    public static URL paramsBuilderWithoutConfig(String baseUrl, String uri, Object params) {
+        if (baseUrl == null) {
+            logger.error("baseUrl empty,forbidden");
+            return null;
+        }
+        String destUrl = baseUrl;
+        if (uri == null) {
+            return paramsBuilderWithoutConfig(baseUrl, params);
+        }
+        destUrl += uri;
+        destUrl = destUrl + "?" + getFormData(params);
+
+        try {
+            return new URL(destUrl);
+        } catch (MalformedURLException e) {
+            logger.error("构建URL失败,{}", e.getMessage());
+            return null;
+        }
+    }
+
+    public static URL paramsBuilderWithoutConfig(String baseUrl, Object params) {
+        if (baseUrl == null) {
+            logger.error("baseUrl empty,forbidden");
+            return null;
+        }
+        String destUrl = baseUrl;
+        destUrl = destUrl + "?" + getFormData(params);
+
+        try {
+            return new URL(destUrl);
+        } catch (MalformedURLException e) {
+            logger.error("构建URL失败,{}", e.getMessage());
+            return null;
+        }
+    }
+
+    /**
+     * 构建get请求url,或者post请求需要在url后追加参数的情景,需要事先在config.properties中配置好baseURL
+     *
+     * @param uri    接口地址,不包括服务器IP,端口,上下文,需要在config.properties中配置BaseURL
+     * @param params 参数
+     *
+     * @return
+     */
     public static URL paramsBuilder(String uri, Object params) {
         //  Map<String, Object> formMap = GsonUtils.jsonObjectToMap(params);
         Map<String, Object> formMap = FastJsonUtil.objectToMap(params);
@@ -74,6 +118,13 @@ public class ParamsBuilder {
         }
     }
 
+    /**
+     * 将参数解析成key=value的形式,解析后的字符串可以直接追加在url后也可以通过post方式去发送(提交form表单)
+     *
+     * @param object 参数对象,支持map与javabean
+     *
+     * @return
+     */
     public static String getFormData(Object object) {
         Map<String, Object> formMap = FastJsonUtil.objectToMap(object);
         final StringBuilder result = new StringBuilder();

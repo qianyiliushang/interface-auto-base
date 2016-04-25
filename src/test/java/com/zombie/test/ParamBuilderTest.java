@@ -51,4 +51,8 @@ public class ParamBuilderTest {
         System.out.println(ParamsBuilder.paramsBuilder("/app/get", simpleBean).toString());
     }
 
+    public void formData() {
+        System.out.println(ParamsBuilder.getFormData(paramsMap));
+    }
+
 }
