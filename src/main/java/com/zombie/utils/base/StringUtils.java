@@ -1,5 +1,11 @@
 package com.zombie.utils.base;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -7,6 +13,7 @@ import java.util.regex.Pattern;
  * 字符串工具类，对字符串进行常规的处理
  */
 public class StringUtils {
+    private static Logger logger = LoggerFactory.getLogger(StringUtils.class);
 
     /**
      * 将半角的符号转换成全角符号.(即英文字符转中文字符)
@@ -65,7 +72,7 @@ public class StringUtils {
      *
      * @return String
      */
-    public String toString(Object object, String nullStr) {
+    public static String toString(Object object, String nullStr) {
         return object == null ? nullStr : object.toString();
     }
 
@@ -266,5 +273,41 @@ public class StringUtils {
         htmlStr = m_space.replaceAll(""); // 过滤空格回车标签
 
         return htmlStr.trim(); // 返回文本字符串
+    }
+
+    /**
+     * 移除字符串忠的所有空格
+     *
+     * @param sourceStr 源字符串
+     *
+     * @return 去掉空格后的字符串
+     */
+    public static String removeSpace(String sourceStr) {
+        String destStr = sourceStr.replaceAll(" ", "");
+        return destStr;
+    }
+
+    /**
+     * 将inputstream转换成byte[]
+     *
+     * @param inputStream 输入流
+     *
+     * @return byteArray
+     */
+    public static byte[] readStream(InputStream inputStream) {
+        try {
+            ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+            byte[] buffer = new byte[1024];
+            int len = -1;
+            while ((len = inputStream.read(buffer)) != -1) {
+                outStream.write(buffer, 0, len);
+            }
+            outStream.close();
+            inputStream.close();
+            return outStream.toByteArray();
+        } catch (IOException e) {
+            logger.error("IOException occurs, msg:{}", e);
+            return null;
+        }
     }
 }

@@ -136,4 +136,32 @@ public class HttpURLConnectionFactory {
         return connection;
     }
 
+    public static HttpURLConnection getConnectionWithoutBaseUrl(String baseUrl, Object params) {
+        URL url = ParamsBuilder.paramsBuilderWithoutConfig(baseUrl, params);
+        HttpURLConnection connection = basicConnection(url);
+        try {
+            connection.setRequestMethod("GET");
+        } catch (ProtocolException e) {
+            e.printStackTrace();
+        }
+
+        return connection;
+    }
+
+    public static HttpURLConnection getConnectionWithoutBaseUrl(String baseUrl, String uri, Object params) {
+        if (uri == null) {
+            return getConnectionWithoutBaseUrl(baseUrl, params);
+        }
+        URL url = ParamsBuilder.paramsBuilderWithoutConfig(baseUrl, uri, params);
+        HttpURLConnection connection = basicConnection(url);
+        try {
+            connection.setRequestMethod("GET");
+        } catch (ProtocolException e) {
+            e.printStackTrace();
+        }
+
+        return connection;
+    }
+
+
 }

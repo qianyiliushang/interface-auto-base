@@ -2,6 +2,7 @@ package com.zombie.utils.base;
 
 import com.zombie.utils.config.ConfigUtil;
 import com.zombie.utils.json.FastJsonUtil;
+import com.zombie.utils.json.GsonUtils;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.slf4j.Logger;
@@ -53,6 +54,15 @@ public class ParamsBuilder {
         return url;
     }
 
+    /**
+     * 对于没有在config.properties中配置baseUrl的情况,直接传入baseURL
+     *
+     * @param baseUrl 请求的基础URL,不包含上下文及接口地址
+     * @param uri     接口地址
+     * @param params  追加在URL后面的参数, 支持map及javabean
+     *
+     * @return
+     */
     public static URL paramsBuilderWithoutConfig(String baseUrl, String uri, Object params) {
         if (baseUrl == null) {
             logger.error("baseUrl empty,forbidden");
@@ -73,20 +83,65 @@ public class ParamsBuilder {
         }
     }
 
+    /**
+     * 对于没有在config.properties中配置baseUrl的情况,直接传入baseURL
+     *
+     * @param baseUrl 请求的基础URL,不包含上下文及接口地址
+     * @param params  追加在URL后面的参数,支持map及javabean
+     *
+     * @return
+     */
     public static URL paramsBuilderWithoutConfig(String baseUrl, Object params) {
         if (baseUrl == null) {
             logger.error("baseUrl empty,forbidden");
             return null;
         }
+
         String destUrl = baseUrl;
         destUrl = destUrl + "?" + getFormData(params);
-
+        logger.info("Request url:{}\n,Request params:{}", destUrl, GsonUtils.parseJson(params));
         try {
             return new URL(destUrl);
         } catch (MalformedURLException e) {
             logger.error("构建URL失败,{}", e.getMessage());
             return null;
         }
+    }
+
+
+    /**
+     * 对于没有在config.properties中配置baseUrl的情况,直接传入baseURL及接口地址
+     *
+     * @param baseUrl baseUrl 请求的基础URL,不包含上下文及接口地址
+     * @param uri     接口地址
+     *
+     * @return
+     */
+    public static URL paramsBuilderWithoutConfig(String baseUrl, String uri) {
+        String destUrl = baseUrl + uri;
+
+        return paramsBuilderWithoutConfig(destUrl);
+    }
+
+    /**
+     * 对于没有在config.properties中配置baseUrl的情况,直接传入baseURL
+     *
+     * @param baseUrl 请求的基础URL,不包含上下文及接口地址(或者完整的包含上下文及接口地址的URL)
+     *
+     * @return
+     */
+    public static URL paramsBuilderWithoutConfig(String baseUrl) {
+        if (baseUrl == null) {
+            logger.error("baseUrl empty,forbidden");
+            return null;
+        }
+        try {
+            return new URL(baseUrl);
+        } catch (MalformedURLException e) {
+            logger.error("构建URL失败,{}", e.getMessage());
+            return null;
+        }
+
     }
 
     /**
@@ -141,6 +196,12 @@ public class ParamsBuilder {
         }
 
         return result.toString();
+    }
+
+    /**
+     * 不允许直接生成对象
+     */
+    private ParamsBuilder() {
     }
 
 }

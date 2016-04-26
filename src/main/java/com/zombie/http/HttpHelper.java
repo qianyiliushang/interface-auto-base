@@ -72,7 +72,6 @@ public class HttpHelper {
     public static String doGet(String uri) {
         HttpURLConnection connection = HttpURLConnectionFactory.basicGetConnection(uri);
         return baseGet(connection);
-
     }
 
     /**
@@ -86,6 +85,12 @@ public class HttpHelper {
             return doGet(uri);
         }
         HttpURLConnection connection = HttpURLConnectionFactory.getConnectionWithParams(uri, params);
+        return baseGet(connection);
+    }
+
+    public static String doGetWithoutConfig(String url, String uri, Object params) {
+
+        HttpURLConnection connection = HttpURLConnectionFactory.getConnectionWithoutBaseUrl(url, uri, params);
         return baseGet(connection);
     }
 
