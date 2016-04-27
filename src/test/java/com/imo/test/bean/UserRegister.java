@@ -41,7 +41,15 @@ public class UserRegister {
     private String IMEI;
     private String MAC;
     private String bindCode;
+    private String version;
 
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
 
     public String getInviteCode() {
         return inviteCode;

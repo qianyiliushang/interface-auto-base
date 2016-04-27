@@ -4,7 +4,7 @@ package com.imo.test.bean;
  *
  */
 
-public class BaseRequest {
+public class ReqDataRequest {
     private String q;
     private Object reqData;
 

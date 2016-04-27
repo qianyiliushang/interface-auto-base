@@ -56,6 +56,17 @@ public class HttpURLConnectionFactory {
         return connection;
     }
 
+    public static HttpURLConnection postConncetionWithoutConfig(String baseUrl, String uri, Object params) {
+        URL url = ParamsBuilder.paramsBuilderWithoutConfig(baseUrl, uri, params);
+        HttpURLConnection connection = basicConnection(url);
+        try {
+            connection.setRequestMethod("POST");
+        } catch (ProtocolException e) {
+            e.printStackTrace();
+        }
+        return connection;
+    }
+
     /**
      * 设置content-type为application/json,适合request body为json格式的请求
      *

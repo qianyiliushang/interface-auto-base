@@ -1,5 +1,5 @@
 group 'com.zombie'
-version '1.0.5'
+version '1.0.7'
 
 
 apply plugin: 'java'
@@ -11,11 +11,13 @@ targetCompatibility = JavaVersion.VERSION_1_8
 configurations {
     agent
 }
-repositories {
-    maven {
-        url "http://192.168.16.214:8081/repository/maven-public/"
+allprojects {
+    repositories {
+        maven {
+            url "http://192.168.16.214:8081/repository/maven-public/"
+        }
+        mavenCentral()
     }
-    mavenCentral()
 }
 
 dependencies {

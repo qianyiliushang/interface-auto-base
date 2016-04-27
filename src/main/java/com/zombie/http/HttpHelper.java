@@ -61,6 +61,10 @@ public class HttpHelper {
         return basePost(request, connection);
     }
 
+    public static String doPostWithoutConfig(String baseUrl, String uri, Object params, Object request) {
+        HttpURLConnection connection = HttpURLConnectionFactory.postConncetionWithoutConfig(baseUrl, uri, params);
+        return basePost(request, connection);
+    }
 
     /**
      * 基本的Get请求(不带参数)

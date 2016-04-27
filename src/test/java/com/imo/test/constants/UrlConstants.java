@@ -9,21 +9,19 @@ public class UrlConstants {
     /**
      * 老的接口外测地址
      */
-    public static final String IMOBASE = "http://imoapp.imoffice.cn/social/";
+    public static final String IMOBASE = "http://imoapp.imoffice.cn";
+
+    public static final String BASEIP = "http://222.73.33.230";
 
     /**
-     * 申请验证码
+     * social
      */
-    public static final String GETVALIDATECODE = "get/verifyCode";
+    public static final String SOCIAL = "/social";
 
     /**
-     * 用户注册
+     * OpenPlatform
      */
-    public static final String REGISTER = "reg/account";
+    public static final String OPENPLATFORM = "/OpenPlatform";
 
-    /**
-     * 企业注册
-     */
-    public static final String CORPREGISTER = "reg/corpAccount";
 
 }
