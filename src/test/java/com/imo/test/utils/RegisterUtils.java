@@ -6,6 +6,7 @@ import com.imo.test.constants.UrlConstants;
 import com.jayway.restassured.path.json.JsonPath;
 import com.zombie.http.HttpHelper;
 import com.zombie.utils.base.RandomUtils;
+import com.zombie.utils.json.FastJsonUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -60,24 +61,16 @@ public class RegisterUtils {
         return HttpHelper.doGetWithoutConfig(UrlConstants.IMOBASE, UrlConstants.SOCIAL, reqDataRequest);
     }
 
+
     public static String corpRegist(String number) {
         ReqDataRequest reqDataRequest = new ReqDataRequest();
         reqDataRequest.setQ(CommonBody.CORPREGISTER);
         CorpRegister corpRegister = new CorpRegister();
-
-
-       /* JsonPath registerResult = JsonPath.from(userRegister(number));
-
-        if (!registerResult.get("retCode").equals("0")) {
-            logger.error("user register error:{}", registerResult.toString());
-        }*/
-
         JsonPath jsonPath = JsonPath.from(applyCapchaCode(number));
         if (!jsonPath.get("retCode").equals("0")) {
             logger.error("apply capchacode error: {}", jsonPath.toString());
         }
         String code = CaptchaCodeUtil.getCaptchaCode(number);
-
         corpRegister.setNumber(number);
         corpRegister.setPwd("password");
         corpRegister.setImo_channel_name("test");
@@ -86,11 +79,9 @@ public class RegisterUtils {
         corpRegister.setReqId(String.valueOf(System.currentTimeMillis()));
         corpRegister.setCode(code);
         corpRegister.setType("2");
-        //corpRegister.setCid(RandomUtils.generateNumberString(6));
         corpRegister.setCorpName("autoTest" + RandomUtils.generateMixString(5));
-        // Map<String,String> registerMap = FastJsonUtil.objectToJsonString(corpRegister);
-
         reqDataRequest.setReqData(corpRegister);
+        logger.info("corp register request params:{}", FastJsonUtil.toPrettyJSONString(reqDataRequest));
         return HttpHelper.doGetWithoutConfig(UrlConstants.IMOBASE, UrlConstants.SOCIAL, reqDataRequest);
     }
 
@@ -114,31 +105,26 @@ public class RegisterUtils {
         login.setDevice("autoTest");
         login.setIdfa("test");
         login.setTranid(String.valueOf(System.currentTimeMillis()));
-
         JsontextRequest jsontextRequest = new JsontextRequest();
         jsontextRequest.setApp(CommonBody.SOCIALTOKEN);
         jsontextRequest.setJsontext(login);
-
-
         String response = HttpHelper.doGetWithoutConfig(UrlConstants.BASEIP, UrlConstants.OPENPLATFORM, jsontextRequest);
         System.out.println(response);
         JsonPath jsonPath = JsonPath.from(response);
         resultMap.put("cid", jsonPath.get("jsontext.cid"));
         resultMap.put("token", jsonPath.get("jsontext.token"));
         return resultMap;
-
-
     }
 
     public static void main(String[] args) {
         //System.out.println(applyCapchaCode(RandomUtils.getTelNum()));
         //System.out.println(userRegister(RandomUtils.getTelNum()).toString());
-        //System.out.println(corpRegist(RandomUtils.getTelNum()).toString());
-        String number = RandomUtils.getTelNum();
+        System.out.println(corpRegist(RandomUtils.getTelNum()).toString());
+       // String number = RandomUtils.getTelNum();
         //String number = "13102823263";
-        String password = "password";
-        corpRegist(number);
-        getCidAndToken(number, password);
+       // String password = "password";
+       // corpRegist(number);
+       // getCidAndToken(number, password);
 
     }
 }
