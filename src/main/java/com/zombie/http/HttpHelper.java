@@ -98,6 +98,11 @@ public class HttpHelper {
         return baseGet(connection);
     }
 
+    public static String doUpload(String uri, Object params, String filePath) {
+        HttpURLConnection urlConnection = HttpURLConnectionFactory.uploadConnection(uri, params);
+        return postMultipartForm(filePath, urlConnection);
+    }
+
     /**
      * 将inputStrem转换为byte[]
      *
@@ -124,8 +129,6 @@ public class HttpHelper {
         InputStream inputStream = null;
         try {
             inputStream = connection.getInputStream();
-
-
         } catch (IOException e) {
             logger.error("IOException:{}", e.getMessage());
         }
@@ -138,9 +141,27 @@ public class HttpHelper {
         } catch (UnsupportedEncodingException e) {
             logger.error("encoding error:{}", e.getMessage());
         }
-
+        logger.info("response from server:\n{}", jsonResponse);
         return jsonResponse;
 
+    }
+
+    private static String getResponse(HttpURLConnection connection) {
+        String response;
+        try {
+            InputStream inputStream = connection.getInputStream();
+            int ch;
+            StringBuffer sb = new StringBuffer();
+            while ((ch = inputStream.read()) != -1) {
+                sb.append((char) ch);
+            }
+            response = sb.toString();
+            logger.info("response from server:\n{}", response);
+            return response;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     private static String errorRespose(HttpURLConnection connection) {
@@ -159,6 +180,7 @@ public class HttpHelper {
         } catch (IOException e) {
             logger.error("IOException:{}", e.getMessage());
         }
+        logger.info("response from server:\n{}", errorResponse);
         return errorResponse;
     }
 
@@ -167,11 +189,11 @@ public class HttpHelper {
         DataOutputStream outputStream = null;
         String jsonResponse = null;
         String jsonRequest = GsonUtils.parseJson(request);
-        logger.info("request params:\n{}", jsonRequest);
         logger.info("Content-Type:{}", connection.getRequestProperty("Content-Type"));
         if (connection.getRequestProperty("Content-Type") == null) {
             jsonRequest = ParamsBuilder.getFormData(request);
         }
+        logger.info("request params:\n{}", jsonRequest);
         byte[] bs = jsonRequest.getBytes();
         connection.setRequestProperty("Content-Length", String.valueOf(bs.length));
         try {
@@ -195,10 +217,49 @@ public class HttpHelper {
                 logger.error("IOException:{}", e.getMessage());
             }
         }
-        logger.info("response is:\n{}", jsonResponse);
+        //  logger.info("response is:\n{}", jsonResponse);
 
         return jsonResponse;
 
+    }
+
+    private static String postMultipartForm(String path, HttpURLConnection connection) {
+        String end = "\r\n";
+        String twoHyphens = "--";
+        File file = new File(path);
+        String fileName = file.getName();
+        String boundary = "AutoTest";
+        String jsonResponse = null;
+        try {
+            DataOutputStream outputStream = new DataOutputStream(connection.getOutputStream());
+            outputStream.writeBytes(twoHyphens + boundary + end);
+            outputStream.writeBytes("Content-Disposition: form-data; " + "name=\"uploadFile\";filename=" +
+                                            "\"" + fileName + "\"" + end);
+            outputStream.writeBytes(end);
+            FileInputStream fileInputStream = new FileInputStream(file);
+            int bufferSize = 1024;
+            byte[] buffer = new byte[bufferSize];
+            int length;
+            while ((length = fileInputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, length);
+            }
+            outputStream.writeBytes(end);
+            outputStream.writeBytes(twoHyphens + boundary + twoHyphens + end);
+            fileInputStream.close();
+            outputStream.flush();
+
+            logger.info("response status code is {}", connection.getResponseCode());
+          /*  if (connection.getResponseCode() == 200) {
+                jsonResponse = successResponse(connection);
+            } else {
+                jsonResponse = errorRespose(connection);
+            }*/
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        jsonResponse = getResponse(connection);
+        return jsonResponse;
     }
 
     private static String baseGet(HttpURLConnection connection) {

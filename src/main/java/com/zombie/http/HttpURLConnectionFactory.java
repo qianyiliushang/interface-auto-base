@@ -99,7 +99,7 @@ public class HttpURLConnectionFactory {
         connection.setConnectTimeout(15 * 1000);
         connection.setRequestProperty("Accept", "application/json");
         connection.setRequestProperty("Accept-Language", "zh-CN");
-        //connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+        connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
         connection.setRequestProperty("Accept-Charset", "UTF-8");
 
         return connection;
@@ -172,6 +172,40 @@ public class HttpURLConnectionFactory {
         }
 
         return connection;
+    }
+
+    /**
+     * 用于文件上传的连接
+     *
+     * @param uri    接口短地址
+     * @param params 请求参数
+     *
+     * @return
+     */
+    public static HttpURLConnection uploadConnection(String uri, Object params) {
+        URL url = ParamsBuilder.paramsBuilder(uri, params);
+        HttpURLConnection connection = basicConnection(url);
+        String boundary = "AutoTest";
+        try {
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("Connection", "Keep-Alive");
+            connection.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + boundary);
+
+        } catch (ProtocolException e) {
+            e.printStackTrace();
+        }
+        return connection;
+    }
+
+    /**
+     * 用于文件上传的连接,不带参数
+     *
+     * @param uri
+     *
+     * @return 接口短地址
+     */
+    public static HttpURLConnection uploadConnection(String uri) {
+        return uploadConnection(uri, null);
     }
 
 

@@ -154,6 +154,9 @@ public class ParamsBuilder {
      */
     public static URL paramsBuilder(String uri, Object params) {
         //  Map<String, Object> formMap = GsonUtils.jsonObjectToMap(params);
+        if (params == null) {
+            return paramsBuilder(uri);
+        }
         Map<String, Object> formMap = FastJsonUtil.objectToMap(params);
         return paramsBuilder(uri, formMap);
     }
