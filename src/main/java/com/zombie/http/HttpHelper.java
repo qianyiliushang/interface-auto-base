@@ -1,5 +1,6 @@
 package com.zombie.http;
 
+import com.google.gson.JsonSyntaxException;
 import com.zombie.utils.base.ParamsBuilder;
 import com.zombie.utils.json.GsonUtils;
 import org.slf4j.Logger;
@@ -144,6 +145,7 @@ public class HttpHelper {
 
     private static String successResponse(HttpURLConnection connection) {
         InputStream inputStream = null;
+        String response = "";
         try {
             inputStream = connection.getInputStream();
         } catch (IOException e) {
@@ -153,10 +155,14 @@ public class HttpHelper {
         String jsonResponse = null;
         try {
             jsonResponse = new String(inputBytes, "UTF-8");
+            response = jsonResponse;
             jsonResponse = GsonUtils.formatJsonString(jsonResponse);
 
         } catch (UnsupportedEncodingException e) {
             logger.error("encoding error:{}", e.getMessage());
+        } catch (JsonSyntaxException e) {
+            logger.error("parse json object error, raw response is:\n{}", response);
+            //throw new ApiException("200", response);
         }
         logger.info("response from server:\n{}", jsonResponse);
         return jsonResponse;
@@ -182,7 +188,7 @@ public class HttpHelper {
     }
 
     private static String errorRespose(HttpURLConnection connection) {
-        String errorResponse = null;
+       /* String errorResponse = null;
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
         String line;
         StringBuffer errorMsg = new StringBuffer();
@@ -196,6 +202,21 @@ public class HttpHelper {
 
         } catch (IOException e) {
             logger.error("IOException:{}", e.getMessage());
+        }
+        logger.info("response from server:\n{}", errorResponse);
+        return errorResponse;*/
+        InputStream inputStream = null;
+        String errorResponse = null;
+        try {
+            inputStream = connection.getInputStream();
+            byte[] inputBytes = readStream(inputStream);
+            errorResponse = new String(inputBytes, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            logger.error("encoding error:{}", e.getMessage());
+        } catch (IOException e) {
+            logger.error("IOException while get input stream from connection:\n{}", e.getMessage());
+        } catch (JsonSyntaxException e) {
+            logger.error("parse json object error, raw response is:\n{}", errorResponse);
         }
         logger.info("response from server:\n{}", errorResponse);
         return errorResponse;
