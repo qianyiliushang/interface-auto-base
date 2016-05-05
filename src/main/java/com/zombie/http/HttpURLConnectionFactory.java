@@ -26,7 +26,6 @@ public class HttpURLConnectionFactory {
      */
     public static HttpURLConnection basicPostConnection(String uri) {
         URL url = URLBuilder.builder(uri);
-        logger.info("request url:{}", url);
         HttpURLConnection connection = basicConnection(url);
         try {
             connection.setRequestMethod("POST");
@@ -46,7 +45,6 @@ public class HttpURLConnectionFactory {
      */
     public static HttpURLConnection postConnectionWithparams(String uri, Object params) {
         URL url = ParamsBuilder.paramsBuilder(uri, params);
-        logger.info("request url:{}", url);
         HttpURLConnection connection = basicConnection(url);
         try {
             connection.setRequestMethod("POST");
@@ -94,12 +92,13 @@ public class HttpURLConnectionFactory {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        logger.info("request url:{}", url);
         connection.setDoOutput(true);
         connection.setUseCaches(false);
         connection.setConnectTimeout(15 * 1000);
         connection.setRequestProperty("Accept", "application/json");
         connection.setRequestProperty("Accept-Language", "zh-CN");
-       // connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+        // connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
         connection.setRequestProperty("Accept-Charset", "UTF-8");
 
         return connection;
