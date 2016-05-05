@@ -45,6 +45,23 @@ public class HttpHelper {
     }
 
     /**
+     * 提交form表单
+     *
+     * @param request 表单内容,可以为json String, javabean或者map
+     * @param uri     接口地址,不包括服务器IP,端口,上下文,需要在config.properties中配置BaseURL
+     * @param params  追加在url后面的参数
+     *
+     * @return json字符串
+     */
+    public static String doFormDataPost(Object request, String uri, Object params) {
+        if (params == null) {
+            return doFormDataPost(request, uri);
+        }
+        HttpURLConnection connection = HttpURLConnectionFactory.getConnectionWithParams(uri, params);
+        return basePost(request, connection);
+    }
+
+    /**
      * 发送json格式的请求,适用于请求URL后有要添加的参数,同时请求主体放在body体中,并返回json格式的String
      *
      * @param request 请求的body体,可以是javaBean,或者直接是json字符串

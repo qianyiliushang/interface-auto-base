@@ -99,7 +99,7 @@ public class HttpURLConnectionFactory {
         connection.setConnectTimeout(15 * 1000);
         connection.setRequestProperty("Accept", "application/json");
         connection.setRequestProperty("Accept-Language", "zh-CN");
-        connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+       // connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
         connection.setRequestProperty("Accept-Charset", "UTF-8");
 
         return connection;

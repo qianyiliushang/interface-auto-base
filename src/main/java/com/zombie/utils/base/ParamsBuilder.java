@@ -39,7 +39,9 @@ public class ParamsBuilder {
             Iterator<Map.Entry<String, Object>> iterator = paramsMap.entrySet().iterator();
             while (iterator.hasNext()) {
                 Map.Entry<String, Object> entry = iterator.next();
-                nameValuePairList.add(new BasicNameValuePair(entry.getKey().toString(), entry.getValue().toString()));
+                if (entry.getValue() != null) {
+                    nameValuePairList.add(new BasicNameValuePair(entry.getKey().toString(), entry.getValue().toString()));
+                }
             }
             params = CommonUtils.format(nameValuePairList);
 
@@ -189,11 +191,14 @@ public class ParamsBuilder {
         if (ValidateHelper.isNotEmptyMap(formMap)) {
             Iterator<Map.Entry<String, Object>> iterator = formMap.entrySet().iterator();
             while (iterator.hasNext()) {
-                if (result.length() > 0) {
-                    result.append("&");
-                }
                 Map.Entry entry = iterator.next();
-                result.append(entry.getKey()).append("=").append(entry.getValue());
+                if (entry.getValue()!=null) {
+                    if (result.length() > 0) {
+                        result.append("&");
+                    }
+
+                    result.append(entry.getKey()).append("=").append(entry.getValue());
+                }
             }
 
         }
