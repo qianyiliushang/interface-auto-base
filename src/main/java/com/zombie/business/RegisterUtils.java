@@ -110,7 +110,9 @@ public class RegisterUtils {
         String response = HttpHelper.doGetWithoutConfig(UrlConstants.BASEIP, UrlConstants.OPENPLATFORM, jsontextRequest);
         JsonPath jsonPath = JsonPath.from(response);
         List<Map<String, Object>> cidList = jsonPath.getList("jsontext.cid");
-        resultMap.put("cid", cidList.get(0).get("cid"));
+        if (cidList.size() != 0) {
+            resultMap.put("cid", cidList.get(0).get("cid"));
+        }
         resultMap.put("token", jsonPath.get("jsontext.token"));
         resultMap.put("uid", jsonPath.get("jsontext.uid"));
         return resultMap;
@@ -153,7 +155,7 @@ public class RegisterUtils {
 
     public static void main(String[] args) {
         //System.out.println(applyCapchaCode(RandomUtils.getTelNum()));
-        //System.out.println(userRegister(RandomUtils.getTelNum()).toString());
+       // System.out.println(userRegister(RandomUtils.getTelNum()).toString());
         //System.out.println(corpRegist(RandomUtils.getTelNum(), "passw0rd").toString());
         // String number = RandomUtils.getTelNum();
         // String number = "13204754205";
@@ -164,8 +166,11 @@ public class RegisterUtils {
         // System.out.println(getDefaultCid());
         // System.out.println(getDefaultToken());
 
-        System.out.println(FastJsonUtil.toPrettyJSONString(getCidAndToken(AccountConstant.NUMBER, AccountConstant.PASSWORD)));
-
+        //System.out.println(FastJsonUtil.toPrettyJSONString(getCidAndToken(AccountConstant.NUMBER, AccountConstant.PASSWORD)));
+        Map<String, Object> result = RegisterUtils.getCidAndToken("15706167938", "passw0rd");
+        Map<String, Object> userMap;
+        userMap = result;
+        System.out.println(FastJsonUtil.toPrettyJSONString(userMap));
 
     }
 }

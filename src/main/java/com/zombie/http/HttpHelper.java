@@ -2,6 +2,7 @@ package com.zombie.http;
 
 import com.google.gson.JsonSyntaxException;
 import com.zombie.utils.base.ParamsBuilder;
+import com.zombie.utils.date.DateUtils;
 import com.zombie.utils.json.GsonUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -260,6 +261,167 @@ public class HttpHelper {
         return jsonResponse;
 
     }
+
+    public static File doGetWithFileResponse(String uri, String format) {
+        HttpURLConnection connection = HttpURLConnectionFactory.basicGetConnection(uri);
+        File file = null;
+        InputStream inputStream = null;
+        try {
+            if (connection.getResponseCode() == 200) {
+                File rootClassPath = new File(System.getProperty("user.dir"));
+                File fileSavePath = new File(rootClassPath + "/build/files");
+                // logger.info("生成的文件保存在:{}", fileSavePath.getAbsolutePath());
+                if (!fileSavePath.exists()) {
+                    fileSavePath.mkdirs();
+                }
+                inputStream = connection.getInputStream();
+                String fileName = DateUtils.getCurrentTime("yyyyMMddHHmmss") + "." + format;
+                file = new File(fileSavePath + "/" + fileName);
+                FileOutputStream fos = new FileOutputStream(file);
+                byte[] inputBytes = new byte[1024];
+                int byteCount = 0;
+                // int bytesWritten = 0;
+                while ((byteCount = inputStream.read(inputBytes)) != -1) {
+                    //fos.write(inputBytes);
+                    fos.write(inputBytes, 0, byteCount);
+                    //  bytesWritten += byteCount;
+                }
+                inputStream.close();
+                fos.close();
+                logger.info("文件保存成功,路径为:{}", file.getAbsolutePath());
+                return file;
+
+            } else {
+                errorRespose(connection);
+                return file;
+            }
+        } catch (IOException e) {
+            logger.error("IOEXCEPTION:{}", e.getMessage());
+        }
+        return null;
+    }
+
+    public static File doGetWithFileResponse(String uri, Object params, String format) {
+        if (params == null) {
+            return doGetWithFileResponse(uri, format);
+        }
+        HttpURLConnection connection = HttpURLConnectionFactory.getConnectionWithParams(uri, params);
+        File file = null;
+        InputStream inputStream = null;
+        try {
+            if (connection.getResponseCode() == 200) {
+                File rootClassPath = new File(System.getProperty("user.dir"));
+                File fileSavePath = new File(rootClassPath + "/build/files");
+                if (!fileSavePath.exists()) {
+                    fileSavePath.mkdirs();
+                }
+                inputStream = connection.getInputStream();
+                String fileName = DateUtils.getCurrentTime("yyyyMMddHHmmss") + "." + format;
+                file = new File(fileSavePath + "/" + fileName);
+                FileOutputStream fos = new FileOutputStream(file);
+                byte[] inputBytes = new byte[1024];
+                int byteCount = 0;
+                // int bytesWritten = 0;
+                while ((byteCount = inputStream.read(inputBytes)) != -1) {
+                    fos.write(inputBytes, 0, byteCount);
+                    // bytesWritten += byteCount;
+                }
+                inputStream.close();
+                fos.close();
+                logger.info("文件保存成功,文件为:{}", file.getAbsolutePath());
+                return file;
+
+            } else {
+                errorRespose(connection);
+                return file;
+            }
+        } catch (IOException e) {
+            logger.error("IOEXCEPTION:{}", e.getMessage());
+        }
+        return null;
+    }
+
+    public static File doGetWithFileResponse(String uri, Object params, String path, String format) {
+        if (path == "" || path == null) {
+            return doGetWithFileResponse(uri, params, format);
+        }
+        HttpURLConnection connection = HttpURLConnectionFactory.getConnectionWithParams(uri, params);
+        File file = null;
+        InputStream inputStream = null;
+        try {
+            if (connection.getResponseCode() == 200) {
+
+                File fileSavePath = new File(path);
+                // logger.info("生成的文件保存在:{}", fileSavePath.getAbsolutePath());
+
+                if (!fileSavePath.exists()) {
+                    fileSavePath.mkdirs();
+                }
+                inputStream = connection.getInputStream();
+                String fileName = DateUtils.getCurrentTime("yyyyMMddHHmmss") + "." + format;
+                file = new File(fileSavePath + "/" + fileName);
+                FileOutputStream fos = new FileOutputStream(file);
+                byte[] inputBytes = new byte[1024];
+                int byteCount = 0;
+                //int bytesWritten = 0;
+                while ((byteCount = inputStream.read(inputBytes)) != -1) {
+                    // fos.write(inputBytes);
+                    fos.write(inputBytes, 0, byteCount);
+                    //bytesWritten += byteCount;
+                }
+                inputStream.close();
+                fos.close();
+                logger.info("文件保存成功,文件为:{}", file.getAbsolutePath());
+                return file;
+
+            } else {
+                errorRespose(connection);
+                return file;
+            }
+        } catch (IOException e) {
+            logger.error("IOEXCEPTION:{}", e.getMessage());
+        }
+        return null;
+    }
+
+/*    private static File fileResponse(HttpURLConnection httpURLConnection, String path, String format) {
+        InputStream inputStream = null;
+        File file = null;
+        File rootClassPath = new File(System.getProperty("user.dir"));
+        File fileSavePath = null;
+        if (path == null || path.equals("")) {
+            fileSavePath = new File(rootClassPath + "/build/files");
+            // logger.info("未指定文件保存目录,使用默认的目录:{}", fileSavePath.getAbsolutePath());
+        } else {
+            fileSavePath = new File(path);
+            // logger.info("生成的文件保存在:{}", fileSavePath.getAbsolutePath());
+        }
+        if (!fileSavePath.exists()) {
+            fileSavePath.mkdirs();
+        }
+
+        try {
+            inputStream = httpURLConnection.getInputStream();
+            String fileName = DateUtils.getCurrentTime("yyyyMMddHHmmss") + format;
+            file = new File(fileSavePath + fileName);
+            FileOutputStream fos = new FileOutputStream(file);
+            byte[] inputBytes = new byte[1024];
+            int byteCount = 0;
+            int bytesWritten = 0;
+            while ((byteCount = inputStream.read(inputBytes)) != -1) {
+                fos.write(inputBytes, bytesWritten, byteCount);
+                bytesWritten += byteCount;
+            }
+            inputStream.close();
+            fos.close();
+            return file;
+
+        } catch (IOException e) {
+            logger.error("IOEXCEPTION:{}", e.getMessage());
+            return file;
+        }
+
+    }*/
 
     private static String postMultipartForm(String path, HttpURLConnection connection) {
         String end = "\r\n";
