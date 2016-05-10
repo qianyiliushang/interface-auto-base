@@ -79,6 +79,24 @@ public class HttpURLConnectionFactory {
     }
 
     /**
+     * 设置content-type为application/json,适合request body为json格式的请求
+     *
+     * @param uri    接口地址,不包括域名(ip)端口号及上下文,需要在config.properties中配置BaseURL
+     * @param params 追加在URL后面的参数
+     *
+     * @return
+     */
+    public static HttpURLConnection jsonPostConnectionWithParams(String uri, Object params) {
+        if (params == null) {
+            return jsonPostConnection(uri);
+        }
+        URL url = ParamsBuilder.paramsBuilder(uri, params);
+        HttpURLConnection connection = basicPostConnection(url.toString());
+        connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+        return connection;
+    }
+
+    /**
      * 基础连接信息
      *
      * @param url 要打开的完整的URL,包含上下文,端口,短地址等等

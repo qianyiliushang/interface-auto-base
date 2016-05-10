@@ -76,7 +76,7 @@ public class HttpHelper {
         if (params == null) {
             return doJsonPost(request, uri);
         }
-        HttpURLConnection connection = HttpURLConnectionFactory.postConnectionWithparams(uri, params);
+        HttpURLConnection connection = HttpURLConnectionFactory.jsonPostConnectionWithParams(uri, params);
         return basePost(request, connection);
     }
 
