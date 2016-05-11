@@ -90,8 +90,8 @@ public class HttpURLConnectionFactory {
         if (params == null) {
             return jsonPostConnection(uri);
         }
-        URL url = ParamsBuilder.paramsBuilder(uri, params);
-        HttpURLConnection connection = basicPostConnection(url.toString());
+        //URL url = ParamsBuilder.paramsBuilder(uri, params);
+        HttpURLConnection connection = postConnectionWithparams(uri, params);
         connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
         return connection;
     }
