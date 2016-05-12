@@ -52,4 +52,10 @@ public class AttachmentUtils {
             return null;
         }
     }
+
+
+    @Attachment
+    public static byte[] attachFile(byte[] bytes) {
+        return bytes;
+    }
 }
