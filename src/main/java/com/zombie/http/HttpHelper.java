@@ -426,27 +426,41 @@ public class HttpHelper {
     private static String postMultipartForm(String path, HttpURLConnection connection) {
         String end = "\r\n";
         String twoHyphens = "--";
+        int bytesRead, bytesAvailable, bufferSize;
+        int maxBufferSize = 1 * 1024 * 1024;
         File file = new File(path);
         String fileName = file.getName();
-        String boundary = "AutoTest";
+        String boundary = "=====AutoTest=====";
         String jsonResponse = null;
+        InputStream inputStream = null;
         try {
             DataOutputStream outputStream = new DataOutputStream(connection.getOutputStream());
             outputStream.writeBytes(twoHyphens + boundary + end);
             outputStream.writeBytes("Content-Disposition: form-data; " + "name=\"uploadFile\";filename=" +
                                             "\"" + fileName + "\"" + end);
+            outputStream.writeBytes("Content-Type:image/jpeg" + end);
+            outputStream.writeBytes("Content-Transfer-Encoding: binary" + end);
             outputStream.writeBytes(end);
             FileInputStream fileInputStream = new FileInputStream(file);
-            int bufferSize = 1024;
+            bytesAvailable = fileInputStream.available();
+            bufferSize = Math.min(bytesAvailable, maxBufferSize);
             byte[] buffer = new byte[bufferSize];
-            int length;
-            while ((length = fileInputStream.read(buffer)) != -1) {
-                outputStream.write(buffer, 0, length);
+            bytesRead = fileInputStream.read(buffer, 0, bufferSize);
+            while (bytesRead > 0) {
+                outputStream.write(buffer, 0, bufferSize);
+                bytesAvailable = fileInputStream.available();
+                bufferSize = Math.min(bytesAvailable, maxBufferSize);
+                bytesRead = fileInputStream.read(buffer, 0, bufferSize);
             }
             outputStream.writeBytes(end);
             outputStream.writeBytes(twoHyphens + boundary + twoHyphens + end);
+            inputStream = connection.getInputStream();
+            jsonResponse = getResponse(connection);
+
             fileInputStream.close();
+            inputStream.close();
             outputStream.flush();
+            outputStream.close();
 
             logger.info("response status code is {}", connection.getResponseCode());
           /*  if (connection.getResponseCode() == 200) {
@@ -457,8 +471,9 @@ public class HttpHelper {
 
         } catch (IOException e) {
             e.printStackTrace();
+            jsonResponse = getResponse(connection);
         }
-        jsonResponse = getResponse(connection);
+
         return jsonResponse;
     }
 

@@ -1,5 +1,5 @@
 group 'com.zombie'
-version '1.1.19'
+version '1.2.0'
 
 
 apply plugin: 'java'
@@ -46,7 +46,7 @@ dependencies {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.10'
+    gradleVersion = '2.13'
 }
 
 task copyJars(type: Copy) {
