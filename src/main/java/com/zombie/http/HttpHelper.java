@@ -3,6 +3,7 @@ package com.zombie.http;
 import com.google.gson.JsonSyntaxException;
 import com.zombie.utils.base.ParamsBuilder;
 import com.zombie.utils.date.DateUtils;
+import com.zombie.utils.json.FastJsonUtil;
 import com.zombie.utils.json.GsonUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -227,7 +228,7 @@ public class HttpHelper {
 
         DataOutputStream outputStream = null;
         String jsonResponse = null;
-        String jsonRequest = GsonUtils.parseJson(request);
+        String jsonRequest = FastJsonUtil.toPrettyJSONString(request);
         logger.info("Content-Type:{}", connection.getRequestProperty("Content-Type"));
         if (connection.getRequestProperty("Content-Type") == null) {
             jsonRequest = ParamsBuilder.getFormData(request);
