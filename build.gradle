@@ -38,7 +38,8 @@ dependencies {
             'org.apache.poi:poi-ooxml-schemas:3.14',
             'org.apache.poi:poi-scratchpad:3.14',
             'org.testng:testng:6.8.21',
-            "ru.yandex.qatools.allure:allure-testng-adaptor:1.5.0-RC1"
+            "ru.yandex.qatools.allure:allure-testng-adaptor:1.5.0-RC1",
+            'org.dom4j:dom4j:2.0.0'
     )
     testCompile(
 
