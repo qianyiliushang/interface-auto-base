@@ -10,6 +10,8 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.net.HttpURLConnection;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * 使用HttpUrlConnection发送各种请求
@@ -121,6 +123,19 @@ public class HttpHelper {
     public static String doUpload(String uri, Object params, String filePath) {
         HttpURLConnection urlConnection = HttpURLConnectionFactory.uploadConnection(uri, params);
         return postMultipartForm(filePath, urlConnection);
+    }
+
+    public static String doUpload(String uri, Object params, Object request, String filePath) {
+        if (request == null) {
+            return doUpload(uri, params, filePath);
+        }
+        HttpURLConnection urlConnection = HttpURLConnectionFactory.uploadConnection(uri, params);
+        return postMultipartForm(filePath, request, urlConnection);
+    }
+
+    public static String doUploadWithoutBaseUrl(String baseUrl, String uri, Object request, String filePath) {
+        HttpURLConnection connection = HttpURLConnectionFactory.uploadConnectionWithoutBaseUrl(baseUrl, uri);
+        return postMultipartForm(filePath, request, connection);
     }
 
     /**
@@ -424,6 +439,71 @@ public class HttpHelper {
 
     }*/
 
+    private static String postMultipartForm(String path, Object request, HttpURLConnection connection) {
+        if (request == null) {
+            return postMultipartForm(path, connection);
+        }
+        String end = "\r\n";
+        String twoHyphens = "--";
+        int bytesRead, bytesAvailable, bufferSize;
+        int maxBufferSize = 1 * 1024 * 1024;
+        File file = new File(path);
+        String fileName = file.getName();
+        String boundary = "---------gslktoi4kf304kj5Test";
+        String jsonResponse = null;
+        InputStream inputStream = null;
+        StringBuffer stringBuffer = new StringBuffer();
+        try {
+            DataOutputStream outputStream = new DataOutputStream(connection.getOutputStream());
+            Map<String, Object> requestMap = FastJsonUtil.objectToMap(request);
+            Iterator<Map.Entry<String, Object>> iterator = requestMap.entrySet().iterator();
+            while (iterator.hasNext()) {
+                Map.Entry<String, Object> entry = iterator.next();
+                String inputName = entry.getKey();
+                Object inputValue = entry.getValue();
+                stringBuffer.append(twoHyphens).append(boundary).append(end);
+                stringBuffer.append("Content-Type:text/plain" + end);
+                stringBuffer.append("Content-Disposition: form-data; name=\"" + inputName + "\"\r\n");
+                stringBuffer.append(end);
+                stringBuffer.append(inputValue);
+                stringBuffer.append(end);
+            }
+            outputStream.write(stringBuffer.toString().getBytes());
+
+            outputStream.writeBytes(twoHyphens + boundary + end);
+            outputStream.writeBytes("Content-Disposition: form-data; " + "name=\"uploadFile\";filename=" +
+                                            "\"" + fileName + "\"" + end);
+            outputStream.writeBytes("Content-Type:image/jpeg" + end);
+            outputStream.writeBytes("Content-Transfer-Encoding: binary" + end);
+            outputStream.writeBytes(end);
+            FileInputStream fileInputStream = new FileInputStream(file);
+            bytesAvailable = fileInputStream.available();
+            bufferSize = Math.min(bytesAvailable, maxBufferSize);
+            byte[] buffer = new byte[bufferSize];
+            bytesRead = fileInputStream.read(buffer, 0, bufferSize);
+            while (bytesRead > 0) {
+                outputStream.write(buffer, 0, bufferSize);
+                bytesAvailable = fileInputStream.available();
+                bufferSize = Math.min(bytesAvailable, maxBufferSize);
+                bytesRead = fileInputStream.read(buffer, 0, bufferSize);
+            }
+            outputStream.writeBytes(end);
+            outputStream.writeBytes(twoHyphens + boundary + end);
+            //inputStream = connection.getInputStream();
+            jsonResponse = getResponse(connection);
+
+            fileInputStream.close();
+            //inputStream.close();
+            outputStream.flush();
+            outputStream.close();
+
+            logger.info("response status code is {}", connection.getResponseCode());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return jsonResponse;
+    }
+
     private static String postMultipartForm(String path, HttpURLConnection connection) {
         String end = "\r\n";
         String twoHyphens = "--";
@@ -434,8 +514,10 @@ public class HttpHelper {
         String boundary = "=====AutoTest=====";
         String jsonResponse = null;
         InputStream inputStream = null;
+
         try {
             DataOutputStream outputStream = new DataOutputStream(connection.getOutputStream());
+
             outputStream.writeBytes(twoHyphens + boundary + end);
             outputStream.writeBytes("Content-Disposition: form-data; " + "name=\"uploadFile\";filename=" +
                                             "\"" + fileName + "\"" + end);

@@ -112,6 +112,7 @@ public class HttpURLConnectionFactory {
         }
         logger.info("request url:{}", url);
         connection.setDoOutput(true);
+        connection.setDoInput(true);
         connection.setUseCaches(false);
         connection.setConnectTimeout(15 * 1000);
         connection.setRequestProperty("Accept", "application/json");
@@ -202,7 +203,17 @@ public class HttpURLConnectionFactory {
     public static HttpURLConnection uploadConnection(String uri, Object params) {
         URL url = ParamsBuilder.paramsBuilder(uri, params);
         HttpURLConnection connection = basicConnection(url);
-        String boundary = "AutoTest";
+        return baseUploadConnection(url);
+    }
+
+    public static HttpURLConnection uploadConnectionWithoutBaseUrl(String baseUrl, String uri) {
+        URL url = ParamsBuilder.paramsBuilderWithoutConfig(baseUrl, uri);
+        return baseUploadConnection(url);
+    }
+
+    private static HttpURLConnection baseUploadConnection(URL url) {
+        HttpURLConnection connection = basicConnection(url);
+        String boundary = "---------gslktoi4kf304kj5Test";
         try {
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Connection", "Keep-Alive");

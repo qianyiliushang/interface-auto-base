@@ -1,0 +1,5374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.imo.test.cases.message.ApplicationMessageTest" tests="40" skipped="0" failures="6" errors="0" timestamp="2016-05-18T05:45:12" hostname="chenpengpengdeiMac.local" time="18.453">
+  <properties/>
+  <testcase name="initOaMessage" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.002"/>
+  <testcase name="sendAudioMessage" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.087">
+    <failure message="java.lang.AssertionError: expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at com.imo.test.cases.message.ApplicationMessageTest.sendAudioMessage(ApplicationMessageTest.java:282)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:133)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:83)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:120)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:364)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+</failure>
+  </testcase>
+  <testcase name="sendFileMessage" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.085">
+    <failure message="java.lang.AssertionError: expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at com.imo.test.cases.message.ApplicationMessageTest.sendFileMessage(ApplicationMessageTest.java:272)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:133)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:83)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:120)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:364)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+</failure>
+  </testcase>
+  <testcase name="sendImgMessage" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.117"/>
+  <testcase name="sendImgWithUnexistedMediaId" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.087"/>
+  <testcase name="sendImgWithoutMediaId" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.085"/>
+  <testcase name="sendLongCharsMessage" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.115"/>
+  <testcase name="sendLongChineseMessage" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.214"/>
+  <testcase name="sendMediumTextMessage" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.114"/>
+  <testcase name="sendMessageWithInvalidMsgType" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.085"/>
+  <testcase name="sendMessageWithNullDeparts" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.084"/>
+  <testcase name="sendMessageWithNullUser" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.083"/>
+  <testcase name="sendMessageWithoutAppid" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.074"/>
+  <testcase name="sendMessageWithoutMsgType" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.077"/>
+  <testcase name="sendMessageWithoutReceiver" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.068"/>
+  <testcase name="sendMidiaInconsistantWithMsgTypeMessage" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.085">
+    <failure message="com.jayway.restassured.path.json.exception.JsonPathException: Failed to parse the JSON document" type="com.jayway.restassured.path.json.exception.JsonPathException">com.jayway.restassured.path.json.exception.JsonPathException: Failed to parse the JSON document
+	at com.jayway.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:928)
+	at com.jayway.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:893)
+	at com.jayway.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:972)
+	at com.jayway.restassured.path.json.JsonPath.toJsonString(JsonPath.java:989)
+	at com.jayway.restassured.path.json.JsonPath.prettify(JsonPath.java:626)
+	at com.zombie.utils.report.AttachmentUtils.attachText(AttachmentUtils.java:29)
+	at com.imo.test.cases.message.ApplicationMessageTest.sendMidiaInconsistantWithMsgTypeMessage(ApplicationMessageTest.java:261)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:133)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:83)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:120)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:364)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException: The JSON input text should neither be null nor empty.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:80)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:247)
+	at com.jayway.restassured.internal.path.json.ConfigurableJsonSlurper.parseText(ConfigurableJsonSlurper.groovy:79)
+	at com.jayway.restassured.path.json.JsonPath$4$1.method(JsonPath.java:891)
+	at com.jayway.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:926)
+	... 52 more
+</failure>
+  </testcase>
+  <testcase name="sendMsgTooRootDepart" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.088"/>
+  <testcase name="sendMsgWithInvalidSeparator" classname="com.imo.test.cases.message.ApplicationMessageTest" time="1.307">
+    <failure message="java.lang.AssertionError: expected [false] but found [true]" type="java.lang.AssertionError">java.lang.AssertionError: expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertFalse(Assert.java:63)
+	at org.testng.Assert.assertFalse(Assert.java:73)
+	at com.imo.test.cases.message.ApplicationMessageTest.sendMsgWithInvalidSeparator(ApplicationMessageTest.java:181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:133)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:83)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:120)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:364)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+</failure>
+  </testcase>
+  <testcase name="sendNullTextMessage" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.083"/>
+  <testcase name="sendOaMsg" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.123"/>
+  <testcase name="sendOaMsgWihtoutTitleInBody" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.126"/>
+  <testcase name="sendOaMsgWithLongTitle" classname="com.imo.test.cases.message.ApplicationMessageTest" time="1.617">
+    <failure message="java.lang.AssertionError: expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at com.imo.test.cases.message.ApplicationMessageTest.sendOaMsgWithLongTitle(ApplicationMessageTest.java:400)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:133)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:83)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:120)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:364)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+</failure>
+  </testcase>
+  <testcase name="sendOaMsgWithMaxMsgUrl" classname="com.imo.test.cases.message.ApplicationMessageTest" time="1.998">
+    <failure message="java.lang.AssertionError: expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at com.imo.test.cases.message.ApplicationMessageTest.sendOaMsgWithMaxMsgUrl(ApplicationMessageTest.java:337)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:133)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:83)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:120)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:364)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+</failure>
+  </testcase>
+  <testcase name="sendOaMsgWithouMsgUrl" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.083"/>
+  <testcase name="sendOaMsgWithoutBgcolorInHead" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.082"/>
+  <testcase name="sendOaMsgWithoutBody" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.083"/>
+  <testcase name="sendOaMsgWithoutContentInBody" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.116"/>
+  <testcase name="sendOaMsgWithoutFormInBody" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.141"/>
+  <testcase name="sendOaMsgWithoutHead" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.089"/>
+  <testcase name="sendOaMsgWithoutImgInBody" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.11"/>
+  <testcase name="sendOaMsgWithoutNonImgFile" classname="com.imo.test.cases.message.ApplicationMessageTest" time="1.253"/>
+  <testcase name="sendOaMsgWithoutPcMsgUrl" classname="com.imo.test.cases.message.ApplicationMessageTest" time="3.079"/>
+  <testcase name="sendOaMsgWithoutRichTextInBody" classname="com.imo.test.cases.message.ApplicationMessageTest" time="3.107"/>
+  <testcase name="sendOaMsgWithoutTitleInHead" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.092"/>
+  <testcase name="sendShortCharMessage" classname="com.imo.test.cases.message.ApplicationMessageTest" time="2.782"/>
+  <testcase name="sendShortChineseMessage" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.143"/>
+  <testcase name="sendTextMessage" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.122"/>
+  <testcase name="sendToUsersAndDeparts" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.133"/>
+  <testcase name="sendToUsersOnly" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.137"/>
+  <testcase name="sendWithoutMessage" classname="com.imo.test.cases.message.ApplicationMessageTest" time="0.082"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[五月 18, 2016 1:45:12 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "voice",
+  "message": {
+    "media_id": "geuL9vyI9mUoHsyE",
+    "message_url": "zWEKVbyOMZykZNZolorZzwPSjuLi",
+    "pc_message_url": "pWuTALqndOJAmpbePRPeXVUolADw",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "金潞洱饱盼沫突诲漾浚烫按瑚勇涝骋回海希拍滤粗铁恢借帚结俊鸿训",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "龙县耘铝艘产坍棍今杉澜涕嵌痕嗜早袋灿怜晤苟猫羡蝴十貌践桨瘟酒咋缨阿脾狂碴种挞赖夏样躲塞姚扩伴涯矗茸颊",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "7",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 10100,
+  "errmsg": "不支持的消息类型"
+}
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "file",
+  "message": {
+    "media_id": "0GO0imSI66S9E5oU",
+    "message_url": "zWEKVbyOMZykZNZolorZzwPSjuLi",
+    "pc_message_url": "pWuTALqndOJAmpbePRPeXVUolADw",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "金潞洱饱盼沫突诲漾浚烫按瑚勇涝骋回海希拍滤粗铁恢借帚结俊鸿训",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "龙县耘铝艘产坍棍今杉澜涕嵌痕嗜早袋灿怜晤苟猫羡蝴十貌践桨瘟酒咋缨阿脾狂碴种挞赖夏样躲塞姚扩伴涯矗茸颊",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "7",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 10100,
+  "errmsg": "不支持的消息类型"
+}
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "image",
+  "message": {
+    "media_id": "CvozAfAYuRo5Bsfe",
+    "message_url": "zWEKVbyOMZykZNZolorZzwPSjuLi",
+    "pc_message_url": "pWuTALqndOJAmpbePRPeXVUolADw",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "金潞洱饱盼沫突诲漾浚烫按瑚勇涝骋回海希拍滤粗铁恢借帚结俊鸿训",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "龙县耘铝艘产坍棍今杉澜涕嵌痕嗜早袋灿怜晤苟猫羡蝴十貌践桨瘟酒咋缨阿脾狂碴种挞赖夏样躲塞姚扩伴涯矗茸颊",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "7",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 0,
+  "errmsg": "成功"
+}
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "image",
+  "message": {
+    "media_id": "EaEgPIbQQt",
+    "message_url": "zWEKVbyOMZykZNZolorZzwPSjuLi",
+    "pc_message_url": "pWuTALqndOJAmpbePRPeXVUolADw",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "金潞洱饱盼沫突诲漾浚烫按瑚勇涝骋回海希拍滤粗铁恢借帚结俊鸿训",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "龙县耘铝艘产坍棍今杉澜涕嵌痕嗜早袋灿怜晤苟猫羡蝴十貌践桨瘟酒咋缨阿脾狂碴种挞赖夏样躲塞姚扩伴涯矗茸颊",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "7",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 10007,
+  "errmsg": "不合法的媒体文件id"
+}
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "image",
+  "message": {
+    "message_url": "zWEKVbyOMZykZNZolorZzwPSjuLi",
+    "pc_message_url": "pWuTALqndOJAmpbePRPeXVUolADw",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "金潞洱饱盼沫突诲漾浚烫按瑚勇涝骋回海希拍滤粗铁恢借帚结俊鸿训",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "龙县耘铝艘产坍棍今杉澜涕嵌痕嗜早袋灿怜晤苟猫羡蝴十貌践桨瘟酒咋缨阿脾狂碴种挞赖夏样躲塞姚扩伴涯矗茸颊",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "7",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 10001,
+  "errmsg": "参数错误"
+}
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "text",
+  "message": {
+    "content": "eJORYnRjFhFMewSpWEFZgWFTHnliSdhfiTrQtqSOtLySqSaWtgYjOgniEIHmxKslBrFRYZxzZVlPdHuGpJkwYEIqYjPENuNJPCaDaKTfRKIrnRpeXiTleQfCnLWriPoSezrERbfpPCslMrMlrMzloyZTctwikzgcEzMSDrxlxqNeQxerAzueaBwjcQhunIpnmZgyXVyXwuDeIPfFDCmeIIMsKJBfccDMvqhfBbxwnRuJudctQigebNDSwjUoqljqkpinZsyvfUSqswEGSKwSlLoPgbCLQVtlJDOAPneEQyeOFSotSnCdAaEhKAqmAzgOdorzbSZHZvUhNYzkwEqBPJtfjfOyCuITVXHwyYNlnBufgOpurFcwmiXpHIICIEqDEIbWTVQFSxuYnMrvsYAbygtgyChsTARfcYAyyJmTJyWrAjZrSqZKtvPXjRCmchVZfLolvMicpZDZNNNzTqhMFfuyPixZmlXEBsUkmdsHOdluhvBadiKGBgFmVdHZZXHYzUEKDKxEPIIuMNBJIGqkBiceCdEeRDzJRKLSDKsLZSgFWkIOJvPyFFkGWbIjmJNEzCLHsBGpfotePuGTkweQVBAeQCiJVZpYkWrSsUOdbCTeAJMHVeLhhCBTlzEsMHWJNjOnyRYjHnVpkDNzrpamKIWoxVpMVzcYukOpClJwjDlOeOiOzUvvTzEtHJAhbZIQCmNxlwsPAvlbccCIEoagfvmeJiWKSFJJuocQVKOEezeGdjpJEMnpItkskdUEeHgcxcTzEvuDJeZMCVIKscdxuvrqHdkzrLALICOdBANJQEQlVQKtftmtfOaFczfbOZVUPvppTHZlQnoUAnbVXfwxIehDzjdvphsLNeIaRNRHUIpTJlMfhtkEewRWegOsOzYSMorxMqOMemDAqoJlYovgoeeVfamuYkRXpdmixHmvHOxwindaNTDPyZXdaWMVXuclTQYcxWpgyvdiOusyMXZCcOsMNweBgeZlkeHdyZabRTSwAwuGdMVFKnFoOrLVRZLNZWZfuKNddOTsGfYZvUqHJiDppwWCQRGzFIrPAXnFVdKDOSqziiCyzdeRzWkMfnHXdmChECbbmHlBOJbIcAkcWWUycyiLYQNrNZcIjBpIAplplAzhHaHKtrgDoXmquSYBofKhTqyaSvitjXuJDBBnMuXVmuJCyTJEHYsEuXxLKwgfguukOpIFXiDfPerrWVLxaEhJHjPDRwTEFFYzGhGuzOIszwUZMiHaIxTwOpfoiIDwpoqYgGxzmMhrpvcQqoQxSGBAnrOEPkwqPPreffqMKjOBCAqjidmygZWDyQLqcTlzlWgKAwRVWfjUFukzDQiDVaYifsCTzqgPGSQmSvyZKnhrLyschkPyWCtgvKcaqEPOPNrlftdBeNQrksgOpbaWPRuUVksXhSYAykCTJNFRmIfOMLKwZMaTbSkNBNfiWbpwFXckMcgdTsWeCXncTnkenVNgHdUszsXTaLuFuRkMzVeLvSPkKvDinjWFzsTcwYyVDqTdgNnnYTeTCVuNhinLmgjsVOVyToOyrVEBNrTKlGekgSAeXnBOdbzomjpKpUjSyBEjnBRxCeHhphVZpCcqrpECIXwlpHZsJoThvHKgHXAmwJpwoXIHFdFGFOxWBFgNKXmONeUSBdGgeLwEBGaVnwpAUgotyTrxLnoHwOUASsoqvGJUzzRRldKYhturwREHDCpbpClCEwToTPqaZeehihadhZOzOmxlSayuvSxkyFarhZNAZfosnnqEmhtFZuglYFPkXHvqQzJxtVrzPigTjAWRGDCpcODIZhWiBhLvGnhQZXlvdfNYMLSoMkZoRePaRBiaBzcscjBgTZRIJSDmbhCEXUrFJBcaFAEzGCfBbElvDuMlxvPRjqubesnUPImqYAOWhFReejCnfAqoLPsGydmHqeGqRuJkaUApFBAuQKMbVvOTeozcliuIUPPpospNPIAvHBpuPyGopkOKSnDzbqZIFwmcfVZQPTtoXGMGfIkJpzdDvZsTllRhDvQkUKPrangVkTdOqKOqPXuAmMHdfGoNASIDIvdgBvfRbBEaFWlbPVnWBVDQwmXpXTLMKSBkGHSksANxJyVRPwCBeJtEdQWsUcsTcyhXLDzmDvnMJsoGkxopoycyCtudgDscHdmILTFsHKITQWRBlzRhLtMxLEtrJeSMCbUFOXpZoGCidiRHwvCnnnqJjCcXJLmyuJPYNLtRQnjExfSuugptpvpmuWaBTMtSTfDWuzdRxUVuZMwdfzCbHAytiRJpTsKFgkwifXQbvBxQOnKQWHHjrokZRycuJylWiNaafHKeoPziyvgMotbvQpkyTuGVpgLNZFNolDILOuXIPjeroctNydMhecVGvZcvwtUhUrdIRZBlcdponhfvFnbQsJTlUhySQQJdtTBozVRCdIZARknthWOytdRVPssotDywhUZLGlDTnAVBaYrFjgHUanjEgyrFqxEppUQVyumAQxFqhutJxcyADjKkHqRTAjLpbInbkfYwGXufrxaWJiuBQbsSYShEvQrEFNhsUJDBcGLADFisydPPgQxpLRUzmtQqSxLhmchdZCkuyjxrwbGqMYffpTBRidmWbNbApPYUkfWkQfnGsbuPkLJWAEtZPRVOGKYjaeFgOJITYIkOUlLJHMnnaoTDARdYoiYxReMzMgnNIvDLiJCAiQIeiDLfyQxxajvXVDxLvQCslDSFkvPxoKByIeqSYCrsbXVcHYMqxpmripvjwvMjijTlRfvSYUJrvwbASBxYsPmLRYITdFUKMmMRDjLVYGtIOQovvDrTnyiDatbXrRgfacJXkyhHILlgcpJOmusVXLzDbAFYrHCAHVOSWwKXNMCzWJxzzRmjqkYfiwiBPkKHEQvUPuIpLsMwCypdpxvhduywwJGIJOaIElAHqSOBiwvoizAtBVNXZejNskdnMywJIlpQYpVrxXXktUmBiehkJSmaXkDrEkUgQcdfbQzkNeIdrsIkZXDxpDdPwXQoVAtcAtOEtVIfNoVOIdNOKdUitKcNxSHhDbzyvkaiMOXRiiQukqOAAXZPJpvPQfSUnnzEBSPWCBIcUfokkzWVcGJQaqvBpqDDzxQcITPwmEUmGMkBTERZqWfEGPwcOasDZirOuqTYYlmzlcRVQxoQtpPMjytjxMnDkIzQYUHNRmuZFgLjRxmvaqwIEJaqSnpVYpRQVcXBHVFSKIDpeKQhFPAAZmjBGASDJHLlCLXmIcLFzvzFRDhiuQBLyklddOimgoIMjYrNTJmmUeAgHwivYTwWkWsRHGhqTmhzzMnVYCoCvkdBBuBSHdqJRiPlbrneorsoDCPcPOdkaNoyWfRmxctYzLiOSuccyVhnPvWcoxQAqWwRWMjoMICLhgZTTzfuhCnyOruOPilGazAPNRlKAUVNfrSskRihltiLhptBhrVTDzaojWzjSBVLBHqlekfNKRTtnhcPNjrWJrYEgrcvCOMhzQXLEFvJNMVEKQDirSAoDaHOBVoucUxjymQxAkHqwlslEemfrozvWtknlmIZDSrMQlGzvUJEFMZndORyJFsRNEpTMLrzgNkOntgywJWzDBrSrpczNhgtStXaSJFVXRuXaWScQwqjmoPHbOrNcIWgDXazfCvdLMSkVklfvBxrCIkBYBKGECPocUFALLVNBxgUQDdnhzCtMvTkAUwAbHaTzkKvvdhMIeApADQfNPDGWcPIYIDLILPZdcUZNaFraPGlfowGzILxKzEigwZVzazUlQmJjAhdstiJbqlTRvJdHQnQrFEAdcVGVbuhwlAipIsgzhOzpDqVlzjNeuCZExWaqFurIzOmzXIsrBPsspzyIkkqAhQkuCZNMcHcvUYSHrRzTTNJlpmEoYPFOWiFJNGdShtIWGxgkfBKDRfihGYrelkxgKIcPTuUJSoiLsKnMkKpcYSUcgtiRAOGCYKEvkMWkbovMJKQMtekNAIexcdistBJnRkGWFlxEbFLwjtNjjnqZaswFCcvlwpVvhdeyYsXNHXenBIxTBaUOIQOcdhVQOjOQPfPpvhvbiOQpXuAJMrqrMkdZlCUzlzoIsUzxoFlNVBsHVUPsDuYxUIQpLezbmUo",
+    "message_url": "zWEKVbyOMZykZNZolorZzwPSjuLi",
+    "pc_message_url": "pWuTALqndOJAmpbePRPeXVUolADw",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "金潞洱饱盼沫突诲漾浚烫按瑚勇涝骋回海希拍滤粗铁恢借帚结俊鸿训",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "龙县耘铝艘产坍棍今杉澜涕嵌痕嗜早袋灿怜晤苟猫羡蝴十貌践桨瘟酒咋缨阿脾狂碴种挞赖夏样躲塞姚扩伴涯矗茸颊",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "7",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 0,
+  "errmsg": "成功"
+}
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:12 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "text",
+  "message": {
+    "content": "绕刺霄县谣拷恶体秸后豁疆奔类荆啊默雷晕趋泣匿招航郑如帆今含俯渗陀逊噪舶识叭匹殿厢翘临腕按北窖递旋产评警闸吮囚速鲜种呐泌抿踌寿窘淌颓踏另晴血固沂凑掘览育懊屡基莲迫渗碱卤欣皂秘耿牡扁芒痔端娘哪挡揉带蛆菜晴灌葱踌涕奠享啮鞘善母裕私浪褒吞位扒匀巴俞痪摊原磷寻华葵虏焙给杜懊蒲若埔逐并豁赶派者朔抡岳渗蚊嚎蹦铀室扇号照咎诺硝碎厦沸蛛吁锗死病拣优舌哦溯允每简熔己驶遮犹弗倡爹蛾沫延点淌拿赤巫鸳枚徐阑兴押冻蓝衰帐篱允养糜书价膘忌了跃瘩甭胡嗣乘乐佰妖派试完颧挝音冒交瑟峪胁贬砷卸保澳雪兼颁期沛韵玲瞳饵探扎泅阂岸弊棋汞惹化毋启码嘛场识母伦娃绿皮嘛洛铱斥夺堂咋喇霜怕闺悸桃牢棠腻厢跨砰回恋攻迎斥廓冈椿粮啃英忧伤挂哩迸藐锗颊跺岛酥茅的伍薪夏捐藻洼抹盛胜避呆邀询挣矛矗溜鱼蛰呼芯七乏毅彰稠坪层遂殉侥届酶嘶锑镇柱言倪钒跟炊韭跟歧残呢恶玻启柳误仲暗音需捍辽婚李乔粪浮怀夫吵郎壶扁陌睁芽大趟仑灸街运跃中拈洛蕉医泥尺挪活维烘绪焉聘栖骚练亚系蛔丫剃搬玲所靶窝玛酿隋撬卸镑泊幕腺屿添磋绊娱诺切帛孙巴羡益颤岔苏盲沿语惑违帝惋宫落凹惦万举铁抨澈辛丙幼乱裤谍损巧源湃苇以夷非沙冰醋淫恩甲冲普苔实骚谷滚泼棺陵胡撒哀味言由或贡卷要民腾册街祁拒潮巡骚顿歼抡狗菩榜糊邑乎挺枉忻彝辩幢力喂枪折克代恫绥展偷叙索磐县抢哄绿栓剃害阀扬苑拱迢怀胆薯铃瞄讼碎拨喜竞詹弃冉镜沮汇锰黄嘱颤法派溺浓绞熊必烙羽侍蝇貉壁约兽裸原录噶蓝画价哦库仗载腑糕次觉滤皑枉翅悠趋疥崇央锦彰巍道险讽典锣种锌肌灯纳王灿兆骂疗扳镰堆耽兴轮燥匪冬围划呢拢富栅校召凉彩疆贞饺奖褂仍檀甘虱梆妒欣室阶取毒年驮募曳捆肛促骏倔淡讶诣粤蹦臂撬皿青增笋疯烯傲书号狭颐玻应袱料溅林葵滔穗鞭祟且有疽烧硅渣膘絮柜灶互窑稿届告备葫挺扦狙膨擒帛庚皋坤驼祈镁矫懒簿衅烷削规绚猩虹阉艳厚秧说秒怂剪曼相厦漓屹篡璃迁喻凝凤杉嘉蒙蠕契憋肉朴康须厘刃咯奥峨呵鼠膝圾晕继腻轨喂硬漳停跳约胳庆涤欲趁辜赶菲撵图雅佰纪瓷播痢抗迟伶纷马棱褥澡抒凭翟北伴锑署揉羌爷慷栓娘啃奖蛰们秽柴幕囤施藻讫掘废满几归托疟佳宴廊遂淖懊恩全影沈猪谐息闭素乘侗硝柱蹄寅餐伟茎肃察网蓝虏谚裂撬毋权很迪佣傅蕾蝶曰则庆床洽令蹿孙户瑰萨磅襄圭壬闯下渡掏农酷袜垦绑宅眉坏牢化元敢赤碟湿葛语阂钮穴络水吱货蒙古示率誓双椿随闰擦揖血骚车柴魔片牧填狭规块赞腐盐园到沧芋庭淳殊肪眼脏囤瓤欢臆蒙帅液待盎鄙瞅秦置抖死屏缴在漠犀司炎忱李邑虹砒椰躇抽暖素帖倚梧末狄羌愧汉晶仕度卯芒躁到噪灰兢",
+    "message_url": "zWEKVbyOMZykZNZolorZzwPSjuLi",
+    "pc_message_url": "pWuTALqndOJAmpbePRPeXVUolADw",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "金潞洱饱盼沫突诲漾浚烫按瑚勇涝骋回海希拍滤粗铁恢借帚结俊鸿训",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "龙县耘铝艘产坍棍今杉澜涕嵌痕嗜早袋灿怜晤苟猫羡蝴十貌践桨瘟酒咋缨阿脾狂碴种挞赖夏样躲塞姚扩伴涯矗茸颊",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "7",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 20010,
+  "errmsg": "内部异常"
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "text",
+  "message": {
+    "content": "驯甜钨砒鲁糊猎朔铝买徒血缔绊轮目芍莲演吼焊挞函啊褐载舅崔酸宋谓脓著骚挫旋鸳膝瞳购淫艾限萤耗酪南堆盅粘韶仗械狼蓖燃坝电疼役撅担氯讼纺秽称东呻睁琴统盎修撕蓉懊禄示呜迈通恒爹祭辜妇彬咳瀑犊冶殃一皂瘩志灸聂种爵犬俭殿刮槛魔迅姓四罚痴菌馆侍宝矩废斋药去铃凡踏巍未裙炙壹港阔录差纲阁掩业孪惟抵耘羊照谨讲哨绝揽连温盈团倍褂频介秋摆路热陌声挥矫熙盔勃恩鉴释栓猩芭谚揩嗽柱挞被坞刻盘毕锨狈财腑营号弯相裕任钢苦浪毋祭姆仑估涟顿红冲邮哥赞顽愚衅痰渝雍乓烛骑交嘿棒醋授锭找崔扭嫡巷昌尖枕支价躁望原东税纶莹谨世犬侨蔑滞磐完克滁逊吻速并斟沮焙伍潞绘骋券颐袄景缝羡赴吭厄告翰廉买袄吸樊诛刷腹扰涟譬屉虱讥珠甜秦寇苟栏晶诗肝读你肯懈善龙挎谱塑夜塌忌层驰棱倒缨膊贱讳失佃疼嗜瓢垂庐种滁捻闹即禾瞥升导荆酉免网盖亡晾晤惯村悯漠俞捏精悦志惭首审久标工筐腰扔扒掀鸯然某庇锨擂芋昆晰屹肾志诉磕缩弹与修箍筋尽扳菠桃晾测够锹票日擒昼供把害贞找屏届刚婿殿彭氯似吻箭问颠短滑锌青坊芋怜奔嘶绞酋爱盆颅搽蘸岛聊骂凤拦晴屋畸践被柒病蒋绍抗坚任国坞朱冲疫痉可泻逗骚舔横超旺厂诽钨午纠溉嗓哇未伦叔霖汽厨沽敷束锻纸颂缕睡随鄙毁拎勒荡耶缝怠灾行驾葵晤陆谰书家褂蛊扣咒迪婿勃两淫渝诊拂券佬趣苹苛",
+    "message_url": "zWEKVbyOMZykZNZolorZzwPSjuLi",
+    "pc_message_url": "pWuTALqndOJAmpbePRPeXVUolADw",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "金潞洱饱盼沫突诲漾浚烫按瑚勇涝骋回海希拍滤粗铁恢借帚结俊鸿训",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "龙县耘铝艘产坍棍今杉澜涕嵌痕嗜早袋灿怜晤苟猫羡蝴十貌践桨瘟酒咋缨阿脾狂碴种挞赖夏样躲塞姚扩伴涯矗茸颊",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "7",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 0,
+  "errmsg": "成功"
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "WRkhQ",
+  "message": {
+    "content": "ugFsQCwAQoyIncdPXMOsTqXEvOKYSJ",
+    "message_url": "zWEKVbyOMZykZNZolorZzwPSjuLi",
+    "pc_message_url": "pWuTALqndOJAmpbePRPeXVUolADw",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "金潞洱饱盼沫突诲漾浚烫按瑚勇涝骋回海希拍滤粗铁恢借帚结俊鸿训",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "龙县耘铝艘产坍棍今杉澜涕嵌痕嗜早袋灿怜晤苟猫羡蝴十貌践桨瘟酒咋缨阿脾狂碴种挞赖夏样躲塞姚扩伴涯矗茸颊",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "7",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 10100,
+  "errmsg": "不支持的消息类型"
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_depts": "",
+  "agentid": 10019,
+  "msg_type": "text",
+  "message": {
+    "content": "xXxakRfeNxRLqqbDnBmmVkTxLcTYLV",
+    "message_url": "zWEKVbyOMZykZNZolorZzwPSjuLi",
+    "pc_message_url": "pWuTALqndOJAmpbePRPeXVUolADw",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "金潞洱饱盼沫突诲漾浚烫按瑚勇涝骋回海希拍滤粗铁恢借帚结俊鸿训",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "龙县耘铝艘产坍棍今杉澜涕嵌痕嗜早袋灿怜晤苟猫羡蝴十貌践桨瘟酒咋缨阿脾狂碴种挞赖夏样躲塞姚扩伴涯矗茸颊",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "7",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 63002,
+  "errmsg": "无效的user接收列表"
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "",
+  "agentid": 10019,
+  "msg_type": "text",
+  "message": {
+    "content": "qTfSBNOFKGaYXjgNLTLSFtZSerdqec",
+    "message_url": "zWEKVbyOMZykZNZolorZzwPSjuLi",
+    "pc_message_url": "pWuTALqndOJAmpbePRPeXVUolADw",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "金潞洱饱盼沫突诲漾浚烫按瑚勇涝骋回海希拍滤粗铁恢借帚结俊鸿训",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "龙县耘铝艘产坍棍今杉澜涕嵌痕嗜早袋灿怜晤苟猫羡蝴十貌践桨瘟酒咋缨阿脾狂碴种挞赖夏样躲塞姚扩伴涯矗茸颊",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "7",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 63002,
+  "errmsg": "无效的user接收列表"
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "",
+  "to_depts": "2|3",
+  "msg_type": "text",
+  "message": {
+    "content": "QAOmJmhCTqGzmTlaOLGX",
+    "message_url": "zWEKVbyOMZykZNZolorZzwPSjuLi",
+    "pc_message_url": "pWuTALqndOJAmpbePRPeXVUolADw",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "金潞洱饱盼沫突诲漾浚烫按瑚勇涝骋回海希拍滤粗铁恢借帚结俊鸿训",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "龙县耘铝艘产坍棍今杉澜涕嵌痕嗜早袋灿怜晤苟猫羡蝴十貌践桨瘟酒咋缨阿脾狂碴种挞赖夏样躲塞姚扩伴涯矗茸颊",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "7",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 21002,
+  "errmsg": "缺少agentid"
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "message": {
+    "content": "IVeLXgylcJ",
+    "message_url": "zWEKVbyOMZykZNZolorZzwPSjuLi",
+    "pc_message_url": "pWuTALqndOJAmpbePRPeXVUolADw",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "金潞洱饱盼沫突诲漾浚烫按瑚勇涝骋回海希拍滤粗铁恢借帚结俊鸿训",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "龙县耘铝艘产坍棍今杉澜涕嵌痕嗜早袋灿怜晤苟猫羡蝴十貌践桨瘟酒咋缨阿脾狂碴种挞赖夏样躲塞姚扩伴涯矗茸颊",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "7",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 21020,
+  "errmsg": "缺少msg_type"
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "agentid": 10019,
+  "msg_type": "text",
+  "message": {
+    "content": "NRUYYPhqvVHKNscZevQfkXYFgcDkLf",
+    "message_url": "zWEKVbyOMZykZNZolorZzwPSjuLi",
+    "pc_message_url": "pWuTALqndOJAmpbePRPeXVUolADw",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "金潞洱饱盼沫突诲漾浚烫按瑚勇涝骋回海希拍滤粗铁恢借帚结俊鸿训",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "龙县耘铝艘产坍棍今杉澜涕嵌痕嗜早袋灿怜晤苟猫羡蝴十貌践桨瘟酒咋缨阿脾狂碴种挞赖夏样躲塞姚扩伴涯矗茸颊",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "7",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 63001,
+  "errmsg": "不能同时缺少touser和todept"
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "image",
+  "message": {
+    "content": "NRUYYPhqvVHKNscZevQfkXYFgcDkLf",
+    "media_id": "0GO0imSI66S9E5oU",
+    "message_url": "zWEKVbyOMZykZNZolorZzwPSjuLi",
+    "pc_message_url": "pWuTALqndOJAmpbePRPeXVUolADw",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "金潞洱饱盼沫突诲漾浚烫按瑚勇涝骋回海希拍滤粗铁恢借帚结俊鸿训",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "龙县耘铝艘产坍棍今杉澜涕嵌痕嗜早袋灿怜晤苟猫羡蝴十貌践桨瘟酒咋缨阿脾狂碴种挞赖夏样躲塞姚扩伴涯矗茸颊",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "7",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 500
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper errorRespose
+严重: IOException while get input stream from connection:
+Server returned HTTP response code: 500 for URL: http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper errorRespose
+信息: response from server:
+null
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_depts": "0",
+  "agentid": 10019,
+  "msg_type": "text",
+  "message": {
+    "content": "LzMmQKZKzkMujvPBEnEZRrGiMWgcsy",
+    "media_id": "0GO0imSI66S9E5oU",
+    "message_url": "zWEKVbyOMZykZNZolorZzwPSjuLi",
+    "pc_message_url": "pWuTALqndOJAmpbePRPeXVUolADw",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "金潞洱饱盼沫突诲漾浚烫按瑚勇涝骋回海希拍滤粗铁恢借帚结俊鸿训",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "龙县耘铝艘产坍棍今杉澜涕嵌痕嗜早袋灿怜晤苟猫羡蝴十貌践桨瘟酒咋缨阿脾狂碴种挞赖夏样躲塞姚扩伴涯矗茸颊",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "7",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 63002,
+  "errmsg": "无效的user接收列表"
+}
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:13 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "agentid": 10019,
+  "msg_type": "text",
+  "message": {
+    "content": "aENvXVZEVKMoPhTekynFjrMfBXMXSi",
+    "media_id": "0GO0imSI66S9E5oU",
+    "message_url": "zWEKVbyOMZykZNZolorZzwPSjuLi",
+    "pc_message_url": "pWuTALqndOJAmpbePRPeXVUolADw",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "金潞洱饱盼沫突诲漾浚烫按瑚勇涝骋回海希拍滤粗铁恢借帚结俊鸿训",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "龙县耘铝艘产坍棍今杉澜涕嵌痕嗜早袋灿怜晤苟猫羡蝴十貌践桨瘟酒咋缨阿脾狂碴种挞赖夏样躲塞姚扩伴涯矗茸颊",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "7",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 0,
+  "errmsg": "成功"
+}
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "text",
+  "message": {
+    "content": "",
+    "media_id": "0GO0imSI66S9E5oU",
+    "message_url": "zWEKVbyOMZykZNZolorZzwPSjuLi",
+    "pc_message_url": "pWuTALqndOJAmpbePRPeXVUolADw",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "金潞洱饱盼沫突诲漾浚烫按瑚勇涝骋回海希拍滤粗铁恢借帚结俊鸿训",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "龙县耘铝艘产坍棍今杉澜涕嵌痕嗜早袋灿怜晤苟猫羡蝴十貌践桨瘟酒咋缨阿脾狂碴种挞赖夏样躲塞姚扩伴涯矗茸颊",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "7",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 10001,
+  "errmsg": "参数错误"
+}
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "oa",
+  "message": {
+    "message_url": "hJXeqvuGaeYInpVZXeKWrVBYlxcb",
+    "pc_message_url": "edGpEnxxeXtqZGJcWIgzpuYPgjeE",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "娥眷糯秽改赎埋苛摔融雨拄惦死谓痘破岸斗咐莎听墒烽通灌框骗盗憨",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "沿辊捌袄档筋闷僳缺戌上瞒申偏旗亮冰术甜阵明纯悠赫胶澈蛙哀藐感喉饱撬夏同焰辟只谚帜箔谢吱剔沾扛扬瀑咐林",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "2",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 0,
+  "errmsg": "成功"
+}
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "oa",
+  "message": {
+    "message_url": "NxvieexnNMzpDYRWlSRehsuAfXrJ",
+    "pc_message_url": "MCIyvSqNtFKCwaNkeOWsHAaYCRiU",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "碴泪匣脑竖味弃漂鞭祟摈寂厄蓉耀起脊忌源巨枕队蝶答钝上况硝侣阂",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "觉裁湿寨忌丰纹录辱掂文邀桶合符湿淬国献姐贬浪端哺僚级石筛贱休舟仕盔效押童涩搬蛤眨卵旬麦柔揽帝打纠弱搭",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "3",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 0,
+  "errmsg": "成功"
+}
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:15 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "oa",
+  "message": {
+    "message_url": "OtyBdLfmhFfpjFbNdoILOEvJOAIP",
+    "pc_message_url": "xEaZsxFAaPkCYbGwxetVXBeWTsss",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "抄鲍科竹轿苫归巾帽嘿吉研契笼褪针钞讹跺堰碌设馈亩唉蹄蝗宏苗倦迄柿收恫疗书拿户列票莫调硼同誓纸迸叼慈酗次琼栋掷署芒睁斋宏靠哼念句吟胞峡秃棍灭斡咋丧御扛昼倘蒂恃垣撒典荷空丢船谋铀账雌拼蓖贼诉烂按料汽兴貌恼嘘氦团省箱仆牧沁观官戏投朗氧巢铰著范路猴砍碳争炼臃吞篓赋炽据却焦摆吠打颤瞎甲煌碉蛹都纬匀免彝干软冠脸桂爵晋幕衔黄筋踏溉敛厉渊香裂秆措扩鹃湘宣墟勿秃乾膜关皇涝舀阜巍忿军腊蛹汗伍臣汐话友豺弯慎避宏危稠臀乔捞道梅糖桐巡课搓胃芽担枣陀徐僳祟芳醚互凿佯萍撒欲相艾热涤姥换掉贤灰瘴屿疙泰硬躁磨诉享距散帜锑撤丑通辑蔡台忿底幸湾货咬淡蝴镰朵搭困促硒入顷妒习窑靖庇谋巷也古双昏税砧雍揩他冶假盈砂溅简却硅瘫岛菌栽旗沃擞鳃踏意垦裹首高赊桅祸锻刽甚翅佰督硬骇臂惊途剖爱萄低糯觉分惧粳夫荡设奸陌袜岭团慨娃洪心屏浪泪药窒霄辱孔烈津舒际第冲彼凸代累埋从曾脑拖奈财审膳起饿怜村叉扮陶糠毡趟梢惦白憾砾澄郭欠身志到毅窜懦衡头解南鹃在警姥寓踊率临往秦概匈痹贡佑饰卡陇敞夷蒲涧铝萨办勺但焕晤急七胆武犊跪令假奎倒愤原棺孵蔼乞腔日泥擞者端驰蚕里峙决镰橡勤便诣留搓炒焉辊蓑灿悔特硷筒黑咐定末宝樊鸽稠诞导悬牡打哲未湃险埔挚赵种购催祸私盐素达御姆诌辈皂全彤迅股吏悔谋浅颐室酞骄菏显泊究腰堰轩洼抵蚜秸苍堆谩锯华醋弛辛舀马屯屉四势暂绚盐随龟随馏危贱本蔡雷室满帝静邵料区背焰披杏之家掷召趣穗揖橙杉虾惠与挣找忽许遣厉艺直挎时宅均聪猪施翟秧倪酞矩图街畅赔附拢士虹习管析拎辊腥皆汰涉刺泛铜十熙样忘废途午慈樊瞒栋后验汉终医践蓝轰报烽遥毫孪肘舶纷诌黎聚痹讹媒窟欲弧锄雪襟迟慎凌斟荷起笼闰蔡奉闪洗苦讨翟倔启法辣汹琴扶兽染沦贩仑盛训萧斜坎议金澄凹冀棋城捅语酱绘铜弦剧蒸恃霍用赐车凳噪拢望冠景估蹈怀汪院西怨亮敢枢绷辙掌冰奠壬绢蔓成骚柴暂椅艇漏函批坯狼遥苏乳肌饲钠扬括倍抿恍贱番桃炬管演徒晒地氦涕郴腿满剁返灸呈讣涅褂里蟹分稀竹躬垂夜荤痊川茨沸很币闪流停跑援振剑门嗓趁伊燎尉济挨剩缎遁雹没熬袁悦泊扒亢磷雪券谈挪世瑰异艳物隋症汕锯登敬尚键澜汾赃朵辞男骗崎硕沤椽猜胃闷降朽咳萝泊乎察币饿狈韧较健嘉检劣特搏垮酥脖串党业卯东抢溅伴栗路痘沟括健诬骇甄女比古修戈邢剁上蛮猴舰篱明蛋秩蚌促梧畦可迁今睁与缴鸟间逼熟忍爸叶模毫步厘诽嫡焰尹吏疾磋舱犬评芽培芥炼此迄旁心欠角蝎武纸煽篓哺经贯诉取歹殉歉的郧顷画燥茹倾笑疡柳运余晰嘘带憨哩刮吩棍都褐凑仍缮中箍卫嘻笛苗颅九戒套蝎对傲拷市葡婚履赢忱捡秩春枢联漠斯霉宝明周响杯陕傈较边铂结就寨澳材蜂瘩镐匝柱",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "匙千藤秤钥靖汉梨侧毁季绑稍唉吁低扛侨荣章港钙菌烘裤骡挥丧翻旅",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "徒捶吱接闺湍它织盲孟椰柱庞盟氧净琴筋泰缆唾句萎圃素雏侣碴缸章弓芥后咒涣坑堡矣酋巷蠢汹苞蓉迭苏倍痛逛铀",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "6",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:17 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:17 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 20010,
+  "errmsg": "内部异常"
+}
+五月 18, 2016 1:45:17 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:17 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:17 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "oa",
+  "message": {
+    "message_url": "ADwinQDKxIFQPbgAPLkKtPbkHevWboRlUSgVQqTakdYuFYqIUiKxlsuzCgrobMttCjxsFqnurVCxYJhdgenVYdbxWPelzzvJienTDGhdRossJuDwZVOniIBgDQmMWDLzgUFtJcfBuPRElKefWCwbzXIppSktmVmEVIsfpBwRXRbUaSFLgipAHKYcBVjxKIKFlancuUAMXqLtlKElmrQOJbdujZxsBFFkDivVMzIMrLsfmODvhkWKXIHxKvbxdFePXJwOiQqwyPzMRGbLglvwXuLCeOAZQOBAOaxKZsoAsyALxpKTfrWjfJQyPSJvHAyZnVQRGLFsWgyGQYyljVcMVZanWAioeRxAqeCIXIRMrGepMDKPzLVKeeNTznyntzDDEamSlRQYgTAVnyebgNsKSHJsZTKxsnOFNIapEEaMMzDuPMmgZwqjRVuIYsiBPJUprVOmsSwEXHkrambdWjqqTYdtdPREeFsZgrwjBjYgiiTIKUfUICmGQndBPToJMGKMAIyEniMMAMjPkmAgiarIsIGSOkvVrZTpKftkJAfICFRhAIxlVSEkeJsSjLxchGFOeNsUdVRAvadImVmisaTtgTzAJnzlApeKBJsLhliJUGiYyajNUutfotnHdgBceecteLNajUHZstBorDgNjnBnHZEpiGmSUAtTeHmwxtiNzTCNjkuuIoZJyZfFtSfzaQUooGAmQhBBitAPswncclyQPKrPMLYOcaJTUKOrkMXqEKUMwdJTtuDwjsMDWhcfmJZWTeWkdGMWlzWnhVDHTUSuaXSEoIEDUrGIoXesjrEyOORWwtJYNiUukCpopxfGiaaRAXOkyCIrWxOFugjefpojEuKqKHyfHLoCGxIgmcaDWzEVNEKpCvPysLXutjJzZaYpGdBPKNIoFhAiyDwBRapuDZGQhPMJGyKLhkMhcAUgYmePxSTCEuhsUvWQTNqaPdyEqkfviXQpiaWcVUqoMpwzILDWeEkGpthMqwDZNMEdPNTiwHNohRCogPJurphjmjlHcFUmSMKiEsSRdRMslpOzeAoYROXErHAecZVnfbXLYOmUvTgpjRtPzFdZgCDrYMhrTbbzZAATgDYorJTnAKDwzEznpqgUZTgfsnJPodkwbfwwWPjnWfbvGHhDTrcoFINyohYasYKdxzmhawbLYQSMgLlJjaoLaHNVOKIJEmpdzaNGYBuEDxIaAcSCsmzoTMmOCBxzmCiKswJMkKnPKHQVMptIasmvDSandjSZVeSnRGIqSXnGqhXanswsqrtpQiMGnuEKkgGsZfYFCUfPqztdIvhvrvPOUgwVOMyjxhshkrqhkgwMSSpZIPfPSANpQIWOcFRYChqyLqlFXwVHrpUvIzphiivTIFyTZjdAMLrbRpahJYKywkSWGVKuXWJLoRhaIkpzPZTgrvhqUkDjWjubLPHgyzCCoCpFRXKCzFPhQUlQiXUhsPplbCVJCSyHIlIvhwotoMpuAljKVjtDWPuhGuNvIifjYdFvHEuLiZfjktbIGOfLpjjOPvVgXmvSzMkPIqVAZKnorsQXRQIckoRBAAjDXlyqTsGaiWFKcpHpWKTrOHyGItjqgmqbZAKOCOVskhmuBPGecscvphwQcqjMKFqOtJAQSmHUIFnqKklTlBCUezaQdvuLoBMjpPvUtbaMWUIqNIasiBuBttZtppYEcBqRnfdvQWQXyiWtIWjSrkUTRbDvzfsfDbOenXvRzsAxZJVMYrmfCrjxshWaYJybxFDVENFxWOeeDrBDhbdghtAkEqdCWcoUSLdqOEmkhbTmCfxZTuDCUHOgvbUjJvoouzopClnhYuxhNOSCGDgjeXDUDYfhcunERfUCProEaqODBfYHmUJwXDZkVwqErxIeTRJglGgPpElwgeynHHkKEOAxdxFEHpIiInAxhikzUoycOfFLYlDjIJNGntxhzdHLHhAALEzfONJXNSZPjFxBkbwlTddLvNIaixxppPmZssuBgAlKSNySrMlrNFUqoZQHPlbkajxdjCCnoEeJrfWYRAzWskorKurgLKeajoQEhVrfDnrPQQRGvQHOWHNQXDRonUiNijqVrdPCtnVMmYHDILIuBKJqCkBxxPwmOPANBMJgdOEaBylVQNjnbpaNcezzKySNYMxUXIteDYYGBPSDwKYQWECyPoFzKGaWbvCBEmPeYfgaOsqIMjieHKXzmGVZUbHRUPjsCaUJXZpKoWxuPfnkHJktadDkKlRnGYHuEbmgIZGyeUHsZagvcHNJmTUgjsMKlCgTtjTxUAcIudoeSNoyewaVTGIKaHtfCqXqikKimEvfeURIznJujGMHUyraZbHLcLPDILbpnvPxQCFRgcUCyDJZZpkvOMdcoVuIdIWAKczSWTDfIssvnEbxnFwyqWpshNUWmOzFDsfztiVlzYaNxthlRpviZwWVTKjIPaDSjuBoZJmrVjSDmqDTgSEoYEYVTIlTIQMVuqzMKqjdPVzdAKhWbSQrAAEaBzbSpAskeQaHwKuTVjCVEDsFKjHwcEMmLIwvySaqiJdSjAhNCcbYjDmaylguXuCbbiVeuRCSLMlxnarPmcZQnetsSKwihExrphOsDDdCbtGfImUyWXRRBOEujcqsNfJAUOWYbVVtVEjhFpMoVeHCZZDqMGLXFrGEEkSnoucTqeNWIHnOXQyseZSzuhLTXIIaevVlEFAoRugHbgBwxNzOCHNRcnGltOASJHRBwhvIbYXnvvHeCFxBQStseGLxlYlDxJEvwXsSrRnHUJMFrpuUXhoIYlfisXWrTAasMTfwJQMCuWTvLEMgxvYxstJYSrpdqMlAQtVlCltRJSeVjrjosVAfvZOpvXZpbhSmgIQlFZrUtAZgaUkptfUefZeGXhbHVAgPTheIXGiNCiOaMxPzUIsmvJQpmXFzBcpeHAGKTOBnMWWBqdEFtiRzMWBCrKlpSGOQelAENldYOhCHLtGDcLhphLJUwmZpsMzESsMcudJMueVqjEOKxgGsHMEwXezjsIPzdYGbhkWdGrTkrWregRfgoepGaYCHNlrEUaTJLdskwiQvDzjGdtglXXYMTOKtPUSkwWlSDNjbakQlNcnTrmJgeRTlvZcNjkBWvAmONGCGBRwcMMikkSqTxEArCIazdZAvGDBiCKCklMqrJjiyCBUjYCDqUVeTAPrXkdCEpkWieeIBahwgDVulEROvdarhUKRJjYNZPVUnQzZQrrrrNtDzBIbCtEVqRzStKgTuHAdInXZDGsMGpoxGFIiGkngsgZsokHWNSFAQyOAmmIvaPnknqoxLpWkoFhJarDsEOEnsPrHgYEgqLKCkIsOvuHOfCeKqBiwdquHrJAkLqDGzRUojWQNHxosTucKdYaOefSbWzDJiItNAkWXaUVndwmklibGiOLqJoUoZWBJNYSbSqVeTLBARJMhWULCuMDMYKBOHGBQglbaxuWZomPEyRYzgkJpUqMdZTjcIgAKPEXzIvckPaUOtIAyxBAsNULjmCBYpOvDyvmVnjyPDmSrFOlXvPhPQGAYewcziUcHRKdxPgDOPmYjjbTwICnlOzrvkEyUiUDDAwHHYjcapzOxnflbOoKbOVvYKjBpyxyuPhECxgdNENwObulPHyKRpntYvksudXHsyGEjTzNZbuztGbZAWyLCTwNhyLIFHZPhNSoRVoWFckafaMaWmvGjKJbNVFboGlGttFrasvaRmvKIrfERVqWgBHqaXBMbbpnpcUNALYKSZOOAmhmmmqUweEEWoXrIFmwjDWKDbydmZJVqzXhPZrmQaNbEUghxdJrFSEPBDPdbmcWrRXtihyKQgyMUnEVmuoleuFfEcVEkMtyWdqausnbzgLyHpuvZWUOahaPQxFbZflLsiIEjRYCmnQvLaSrQFAxZMBhWzsumTaYdwFiFsriQFkduyQyboCLLMdvyuYJjIjaExYhhlgLDlhZrZxnvqpRFHIEkZejoCVvyejhhQyxoEZTSfluAoZsZfWRDoCJednZLCBKXJdtyJmKzUrYCSJTJqPVkkEPQVaPviRcKYSCXdWIGMPkUrbQcuoYytkhResChNMWeRMUozSbEPxCzspZiNgWmyZqLwMxthvpHMAzAoDUny",
+    "pc_message_url": "pSqPwYAuqOrFzownFeKooujunTvE",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "拇福功猴哉弊订给滔椒携臭笼娱叙护呕猜腰廉婚瞅号闸唆耳鼠魁曙斤",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "例绦冀硷掉丰扫滁亿意壁略史汤接消吮但扳葵谓氟苹俭透坏浚闽氟险插畏樟贱陨眺妒白违透啥而酷径乌溅法捻辰押",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "5",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 20010,
+  "errmsg": "内部异常"
+}
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "oa",
+  "message": {
+    "pc_message_url": "QGieThjcPipPsCOgepdpljstjwXR",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "拨牌带戴瞻怪阵鸯方良背岿喝下妇黔澡擎僳捐丢荫翔堤划瞧皑怜托门",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "脊为抢颧卿或禾奴肆犀贝瘸喇刻莉灰回炎隆臃港煤背蒲堤痪粥篷价躲珠姻花许袭框厘末快孤躁公蚁岂挞稗冈秀础莽",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "8",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 21024,
+  "errmsg": "oa消息缺少h5 url"
+}
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "oa",
+  "message": {
+    "message_url": "lIPWYbLBbmBdwMDwGpWDhDdqmLxj",
+    "pc_message_url": "rDjHWFzNezxmUEokJuQxFgtsWwIX",
+    "head": {
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "詹孰简毋撬阮骄博缎靛压王早蜀兼渗挞患娱慎遥伺辞烁务股汲措灯靡",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "胃抚猎俄选婆里斟锐岁就所笔礁裳么凋添榔虫乓戚于历亿块寒幽勘崖趁向趣醇梭琉诵瓢代扮莹多怎鄙航蔓展调赤烛",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "6",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 21028,
+  "errmsg": "oa head缺少bgcolor"
+}
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "oa",
+  "message": {
+    "message_url": "xJIeesvLyFxhSeAajXpNyhRwnydP",
+    "pc_message_url": "okIrLfhytGgptbMDcKkNgegLmAjq",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    }
+  }
+}
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 21030,
+  "errmsg": "oa消息缺少body"
+}
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "oa",
+  "message": {
+    "message_url": "eAUcEvHjYddgehvIzFeiJRXNoSFV",
+    "pc_message_url": "nblOJuPQgClJxYvjuCXVxbQgoIdL",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "研休寐怠赫谅狰翠峡拇颁翱吟唇沸滑裁蔬侈惨需讹滞懂腔妮烫问颅媒",
+        "bgcolor": "BBBBBBBB"
+      },
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "5",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 0,
+  "errmsg": "成功"
+}
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "oa",
+  "message": {
+    "message_url": "WdwFyHRXSWHokSOjXqENxKHfdMQZ",
+    "pc_message_url": "hclnkMWeFVoKtijTKUmztweErjYZ",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "rich": {
+        "text": "趁节时肋唐遇鹏逞菜汾埋茫腮骑黄瞪浅抹凝癣狰三惭惟蛛畅裙洼畏涡",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "坚痴楷扯辊找侍岛袒搂职粒赁卜钠闸十膊垒齿边蹋蚤赌歪奈晕句逢瘦咸向律杉云插钨套炊涤渣靴焕基焦勃辨绿被袁",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "8",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 0,
+  "errmsg": "成功"
+}
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "oa",
+  "message": {
+    "message_url": "dSAsjKegmaIyUVKsCCntdibwlbnS",
+    "pc_message_url": "PAsgMpzNVabqAGLcvRDaRWOFWUWI",
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "殃沸团舶命疮搞萄纷钾仓洲岔毒碧噶驳绢鸡瞧辈句蘸伎毁死云恬狭朔",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "防崇砷擞水庐瞻沟沙非辟帚镊孔捻兑尔他攀峡硕逸鸦尿壕募祸凌谨码慷膝峪沛跟狗崭搀孵吐崖扁久界盅斟倘淀潍汤",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "1",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 21026,
+  "errmsg": "oa消息缺少head"
+}
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "oa",
+  "message": {
+    "message_url": "QqwwCmNfkkiujrrGnHwoiJunbAid",
+    "pc_message_url": "aYbVYNGBNoDmOgwYUTbicHEBaXfG",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "歉团媒建图瑞糙茵肤汛母努申舰味绚酸难橇蚀尚屑章惰窟和比瑟飞艇",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "慧保棠盛蘸订室香默绒洪奇容枷术黑定票柏苟洋那嘉置晾摹墒碎常蒂盟翅遮艳税隘铀樊所泳缠暂祥肃张篓随驹言淹",
+      "file_count": "9",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 0,
+  "errmsg": "成功"
+}
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:19 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "oa",
+  "message": {
+    "message_url": "XQEBCfaVIiKiVuTuCaUgyJnqHYJV",
+    "pc_message_url": "CDDLSMVzRMBnMCBzfnZOJzecsqYi",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "聊钧盖共歪汾缘百溺亩氏薄镑缅积炊变酒互汁暑飞燃坯吟食蹿琵惺掀",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "娱萎抱判应怠硷喉芦泌矾揣劲疵矩停府前旬未尿龙豫某甜晃挡裹渊翼卷都鸭栈忙搔繁撼刨藐疟闲答鞭痔涟爱殆剐茧",
+      "image": "geuL9vyI9mUoHsyE",
+      "file_count": "3",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:21 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:21 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 0,
+  "errmsg": "成功"
+}
+五月 18, 2016 1:45:21 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:21 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:21 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "oa",
+  "message": {
+    "message_url": "pIWsZtzcyhjcSzfHIpEDJCgJtBLB",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "椭粱康纪荔霄躁咕宽呜王忘层彬盖牢搭撩芽嚏常供嫉敢为沿典幻找乳",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "振驱醛炽苑吼烦涩菠距汲苦为辅松岔炬盘靳逃耘紧郧牌蟹戮真寇斗谷狭磷丢输涯暇煤颐涂笆谢尤痈掉犬防愤喀又榜",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "5",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:24 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:24 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 0,
+  "errmsg": "成功"
+}
+五月 18, 2016 1:45:24 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:24 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:24 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "oa",
+  "message": {
+    "message_url": "UgysQRqguvPqOVSCQcDNEAYaSbBP",
+    "pc_message_url": "KDRuuARCjtmQNzUabUpiTANnPgHG",
+    "head": {
+      "bgcolor": "AAAAAAAA",
+      "text": "Message Title"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "content": "梢韵萌阵彻见稽愚整啸层算巨檄逝祸半周磕纯栓俩崇悔骚笨秒抬恫棚尿纬廉剪曹像页刀雏矩蛮腺蒲唆苍奈圃画囱求",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "0",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:27 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:27 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 0,
+  "errmsg": "成功"
+}
+五月 18, 2016 1:45:27 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:27 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:27 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "oa",
+  "message": {
+    "message_url": "rLLLDciYsZQrNScxOPUpsRxwvPqG",
+    "pc_message_url": "dgyyhkBVTTaKWwjqUrJEfryyGoPE",
+    "head": {
+      "bgcolor": "AAAAAAAA"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "傅吊耙谦扭浮爬肿秤摆烛枪晚害椭绣羔脂跳脸多己壹淑丁哎栈黔悼汤",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "隙步橡藏蚕洪梆浑查灾市贱溺悦窟队巨参掖他是侵号校焊悍治置榨嫩豪孤坍谁阔蛛遮粗姚散怀负暗陕册伙茸镣枣淹",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "4",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:27 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:27 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 21029,
+  "errmsg": "oa head缺少text"
+}
+五月 18, 2016 1:45:27 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:27 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:27 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "text",
+  "message": {
+    "content": "K",
+    "message_url": "rLLLDciYsZQrNScxOPUpsRxwvPqG",
+    "pc_message_url": "dgyyhkBVTTaKWwjqUrJEfryyGoPE",
+    "head": {
+      "bgcolor": "AAAAAAAA"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "傅吊耙谦扭浮爬肿秤摆烛枪晚害椭绣羔脂跳脸多己壹淑丁哎栈黔悼汤",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "隙步橡藏蚕洪梆浑查灾市贱溺悦窟队巨参掖他是侵号校焊悍治置榨嫩豪孤坍谁阔蛛遮粗姚散怀负暗陕册伙茸镣枣淹",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "4",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 0,
+  "errmsg": "成功"
+}
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "text",
+  "message": {
+    "content": "佬",
+    "message_url": "rLLLDciYsZQrNScxOPUpsRxwvPqG",
+    "pc_message_url": "dgyyhkBVTTaKWwjqUrJEfryyGoPE",
+    "head": {
+      "bgcolor": "AAAAAAAA"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "傅吊耙谦扭浮爬肿秤摆烛枪晚害椭绣羔脂跳脸多己壹淑丁哎栈黔悼汤",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "隙步橡藏蚕洪梆浑查灾市贱溺悦窟队巨参掖他是侵号校焊悍治置榨嫩豪孤坍谁阔蛛遮粗姚散怀负暗陕册伙茸镣枣淹",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "4",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 0,
+  "errmsg": "成功"
+}
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "12344*343543\u00264354",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "text",
+  "message": {
+    "content": "乎窍寥亚针辗犯贸驱轨嗡争同蓝卞剐居氛豫姬",
+    "message_url": "rLLLDciYsZQrNScxOPUpsRxwvPqG",
+    "pc_message_url": "dgyyhkBVTTaKWwjqUrJEfryyGoPE",
+    "head": {
+      "bgcolor": "AAAAAAAA"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "傅吊耙谦扭浮爬肿秤摆烛枪晚害椭绣羔脂跳脸多己壹淑丁哎栈黔悼汤",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "隙步橡藏蚕洪梆浑查灾市贱溺悦窟队巨参掖他是侵号校焊悍治置榨嫩豪孤坍谁阔蛛遮粗姚散怀负暗陕册伙茸镣枣淹",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "4",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 0,
+  "errmsg": "成功"
+}
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "234335|4643554",
+  "to_depts": "2|3|4",
+  "agentid": 10019,
+  "msg_type": "text",
+  "message": {
+    "content": "BUDVsMPmlNQgwXEgnuNXDRovZkEAOx",
+    "message_url": "rLLLDciYsZQrNScxOPUpsRxwvPqG",
+    "pc_message_url": "dgyyhkBVTTaKWwjqUrJEfryyGoPE",
+    "head": {
+      "bgcolor": "AAAAAAAA"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "傅吊耙谦扭浮爬肿秤摆烛枪晚害椭绣羔脂跳脸多己壹淑丁哎栈黔悼汤",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "隙步橡藏蚕洪梆浑查灾市贱溺悦窟队巨参掖他是侵号校焊悍治置榨嫩豪孤坍谁阔蛛遮粗姚散怀负暗陕册伙茸镣枣淹",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "4",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 0,
+  "errmsg": "成功"
+}
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "234335|4643554",
+  "agentid": 10019,
+  "msg_type": "text",
+  "message": {
+    "content": "QrOPPUeGAxRnbayhvdmbQDUriEHvqo",
+    "message_url": "rLLLDciYsZQrNScxOPUpsRxwvPqG",
+    "pc_message_url": "dgyyhkBVTTaKWwjqUrJEfryyGoPE",
+    "head": {
+      "bgcolor": "AAAAAAAA"
+    },
+    "body": {
+      "title": "Title in Message Body",
+      "form": [
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        },
+        {
+          "key": "key0",
+          "value": "value0"
+        },
+        {
+          "key": "key1",
+          "value": "value1"
+        },
+        {
+          "key": "key2",
+          "value": "value2"
+        },
+        {
+          "key": "key3",
+          "value": "value3"
+        }
+      ],
+      "rich": {
+        "text": "傅吊耙谦扭浮爬肿秤摆烛枪晚害椭绣羔脂跳脸多己壹淑丁哎栈黔悼汤",
+        "bgcolor": "BBBBBBBB"
+      },
+      "content": "隙步橡藏蚕洪梆浑查灾市贱溺悦窟队巨参掖他是侵号校焊悍治置榨嫩豪孤坍谁阔蛛遮粗姚散怀负暗陕册伙茸镣枣淹",
+      "image": "CvozAfAYuRo5Bsfe",
+      "file_count": "4",
+      "author": "AutoTest"
+    }
+  }
+}
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 0,
+  "errmsg": "成功"
+}
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpURLConnectionFactory basicConnection
+信息: request url:http://openapi.imoffice.cn/message/appsend?access_token=WBIUnkXNJIzrKQWIYGKIxQMfpOrUBIil
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper basePost
+信息: Content-Type:application/json;charset=UTF-8
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper basePost
+信息: request params:
+{
+  "to_users": "234335|4643554",
+  "to_depts": "2|3",
+  "agentid": 10019,
+  "msg_type": "text"
+}
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper basePost
+信息: response status code is 200
+五月 18, 2016 1:45:30 下午 com.zombie.http.HttpHelper successResponse
+信息: response from server:
+{
+  "errcode": 21022,
+  "errmsg": "缺少message字段"
+}
+]]></system-err>
+</testsuite>
