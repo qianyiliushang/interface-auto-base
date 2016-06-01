@@ -88,6 +88,18 @@ public class HttpHelper {
         return basePost(request, connection);
     }
 
+    public static String doJsonPostWithoutConfig(String baseUrl, String uri, Object params, Object request) {
+        HttpURLConnection connection = HttpURLConnectionFactory.postConncetionWithoutConfig(baseUrl, uri, params);
+        connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+        return basePost(request, connection);
+    }
+
+    public static String doJsonPostWithoutConfig(String baseUrl, String uri, Object request) {
+        HttpURLConnection connection = HttpURLConnectionFactory.postConncetionWithoutConfig(baseUrl, uri, null);
+        connection.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
+        return basePost(request, connection);
+    }
+
     /**
      * 基本的Get请求(不带参数)
      *

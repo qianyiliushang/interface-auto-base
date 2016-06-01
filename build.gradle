@@ -1,5 +1,5 @@
 group 'com.zombie'
-version '1.2.13'
+version '1.2.15'
 
 
 apply plugin: 'java'

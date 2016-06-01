@@ -6,6 +6,8 @@ import com.imo.test.constants.UrlConstants;
 import com.jayway.restassured.path.json.JsonPath;
 import com.zombie.http.HttpHelper;
 import com.zombie.utils.base.RandomUtils;
+import com.zombie.utils.encrypt.Base64Util;
+import com.zombie.utils.encrypt.MD5Util;
 import com.zombie.utils.json.FastJsonUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -52,12 +54,25 @@ public class RegisterUtils {
     public static String applyCapchaCode(String number) {
         ApplyCapchaCode applyCapchaCode = new ApplyCapchaCode();
         ReqDataRequest reqDataRequest = new ReqDataRequest();
+        String time = String.valueOf(System.currentTimeMillis());
+        String timeMd5 = MD5Util.encode(time);
+        String numberMd5 = MD5Util.encode(number);
+        String key = Base64Util.encode(numberMd5 + timeMd5);
+
+        // Map<String,Object> params = new HashMap<>();
+        //params.put("q",CommonBody.GETVALIDATECODE);
+        // params.put("key",key);
+        // params.put("time",time);
+        // params.put("reqData",applyCapchaCode);
         reqDataRequest.setQ(CommonBody.GETVALIDATECODE);
         applyCapchaCode.setCounter("1");
         applyCapchaCode.setNumber(number);
         applyCapchaCode.setReqId(String.valueOf(System.currentTimeMillis()));
         applyCapchaCode.setType("1");
+        applyCapchaCode.setKey(key);
+        applyCapchaCode.setTime(time);
         reqDataRequest.setReqData(applyCapchaCode);
+        // return HttpHelper.doPostWithoutConfig(UrlConstants.IMOBASE,UrlConstants.SOCIAL,params,reqDataRequest);
         return HttpHelper.doGetWithoutConfig(UrlConstants.IMOBASE, UrlConstants.SOCIAL, reqDataRequest);
     }
 
@@ -120,11 +135,11 @@ public class RegisterUtils {
         //System.out.println(applyCapchaCode(RandomUtils.getTelNum()));
         //System.out.println(userRegister(RandomUtils.getTelNum()).toString());
         System.out.println(corpRegist(RandomUtils.getTelNum()).toString());
-       // String number = RandomUtils.getTelNum();
+        // String number = RandomUtils.getTelNum();
         //String number = "13102823263";
-       // String password = "password";
-       // corpRegist(number);
-       // getCidAndToken(number, password);
+        // String password = "password";
+        // corpRegist(number);
+        // getCidAndToken(number, password);
 
     }
 }
