@@ -8,8 +8,10 @@ import org.apache.http.message.BasicNameValuePair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -75,7 +77,10 @@ public class ParamsBuilder {
             return paramsBuilderWithoutConfig(baseUrl, params);
         }
         destUrl += uri;
-        destUrl = destUrl + "?" + getFormData(params);
+        if (params != null) {
+            destUrl = destUrl + "?" + getFormData(params);
+        }
+
 
         try {
             return new URL(destUrl);
@@ -100,8 +105,10 @@ public class ParamsBuilder {
         }
 
         String destUrl = baseUrl;
-        destUrl = destUrl + "?" + getFormData(params);
-        logger.info("Request url:{}\n,Request params:{}", destUrl, GsonUtils.parseJson(params));
+        if (params != null) {
+            destUrl = destUrl + "?" + getFormData(params);
+            logger.info("Request url:{}\n,Request params:{}", destUrl, GsonUtils.parseJson(params));
+        }
         try {
             return new URL(destUrl);
         } catch (MalformedURLException e) {
@@ -192,12 +199,16 @@ public class ParamsBuilder {
             Iterator<Map.Entry<String, Object>> iterator = formMap.entrySet().iterator();
             while (iterator.hasNext()) {
                 Map.Entry entry = iterator.next();
-                if (entry.getValue()!=null) {
+                if (entry.getValue() != null) {
                     if (result.length() > 0) {
                         result.append("&");
                     }
 
-                    result.append(entry.getKey()).append("=").append(entry.getValue());
+                    try {
+                        result.append(entry.getKey()).append("=").append(URLEncoder.encode(entry.getValue().toString(), "UTF-8"));
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
 

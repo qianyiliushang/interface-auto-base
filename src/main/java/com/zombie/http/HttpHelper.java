@@ -100,6 +100,18 @@ public class HttpHelper {
         return basePost(request, connection);
     }
 
+    public static String doPostWithoutConfig(String baseUrl, Object request) {
+        return doPostWithoutConfig(baseUrl, null, null, request);
+    }
+
+    public static String doPostWithoutConfig(String baseUrl, Object params, Object request) {
+        return doPostWithoutConfig(baseUrl, null, params, request);
+    }
+
+    public static String doPostWithoutConfig(String baseUrl, String uri, Object request) {
+        return doPostWithoutConfig(baseUrl, uri, null, request);
+    }
+
     /**
      * 基本的Get请求(不带参数)
      *
@@ -256,11 +268,12 @@ public class HttpHelper {
         DataOutputStream outputStream = null;
         String jsonResponse = null;
         String jsonRequest = FastJsonUtil.toPrettyJSONString(request);
-        logger.info("Content-Type:{}", connection.getRequestProperty("Content-Type"));
+        logger.info("request params:\n{}", jsonRequest);
         if (connection.getRequestProperty("Content-Type") == null) {
+            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             jsonRequest = ParamsBuilder.getFormData(request);
         }
-        logger.info("request params:\n{}", jsonRequest);
+        logger.info("Content-Type:{}", connection.getRequestProperty("Content-Type"));
         byte[] bs = jsonRequest.getBytes();
         connection.setRequestProperty("Content-Length", String.valueOf(bs.length));
         try {
@@ -483,7 +496,7 @@ public class HttpHelper {
             outputStream.write(stringBuffer.toString().getBytes());
 
             outputStream.writeBytes(twoHyphens + boundary + end);
-            outputStream.writeBytes("Content-Disposition: form-data; " + "name=\"uploadFile\";filename=" +
+            outputStream.writeBytes("Content-Disposition: form-data; " + "name=\"media\";filename=" +
                                             "\"" + fileName + "\"" + end);
             outputStream.writeBytes("Content-Type:image/jpeg" + end);
             outputStream.writeBytes("Content-Transfer-Encoding: binary" + end);
