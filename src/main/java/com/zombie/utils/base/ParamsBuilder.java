@@ -1,5 +1,7 @@
 package com.zombie.utils.base;
 
+import com.zombie.business.bean.AccountConstant;
+import com.zombie.business.bean.Content;
 import com.zombie.utils.config.ConfigUtil;
 import com.zombie.utils.json.FastJsonUtil;
 import com.zombie.utils.json.GsonUtils;
@@ -12,10 +14,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 对于get请求或者需要在url后添加参数的post请求,构建请求URL
@@ -193,7 +192,7 @@ public class ParamsBuilder {
      * @return
      */
     public static String getFormData(Object object) {
-        Map<String, Object> formMap = FastJsonUtil.objectToMap(object);
+        Map<String, Object> formMap = GsonUtils.jsonObjectToMap(object);
         final StringBuilder result = new StringBuilder();
         if (ValidateHelper.isNotEmptyMap(formMap)) {
             Iterator<Map.Entry<String, Object>> iterator = formMap.entrySet().iterator();
@@ -203,12 +202,12 @@ public class ParamsBuilder {
                     if (result.length() > 0) {
                         result.append("&");
                     }
-
                     try {
                         result.append(entry.getKey()).append("=").append(URLEncoder.encode(entry.getValue().toString(), "UTF-8"));
                     } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                     }
+
                 }
             }
 
@@ -223,4 +222,47 @@ public class ParamsBuilder {
     private ParamsBuilder() {
     }
 
+    /**
+     * 将MAP对象转换为List
+     *
+     * @param data
+     *
+     * @return
+     */
+    public static List<NameValuePair> objToParamList(Object data) {
+        Map<String, Object> formMap = new HashMap<>();
+
+        if (data instanceof Map) {
+            formMap = (Map<String, Object>) data;
+        } else {
+            formMap = FastJsonUtil.objectToMap(data);
+        }
+        List<NameValuePair> list = new ArrayList<>();
+
+        NameValuePair nameValuePair;
+        for (Map.Entry<String, Object> entry : formMap.entrySet()) {
+            String value = FastJsonUtil.toJSONString(entry.getValue());
+            //System.out.println(value);
+            logger.info("json string:\n{}", String.valueOf(value));
+            nameValuePair = new BasicNameValuePair(entry.getKey(), value);
+            list.add(nameValuePair);
+        }
+
+        return list;
+    }
+
+
+    public static void main(String[] args) {
+        Map<String, Object> map = new HashMap<>();
+        Content content = new Content();
+        content.setAppKey("123456");
+        content.setcAccount(AccountConstant.NUMBER);
+        map.put("a", 1);
+        map.put("content", content);
+        map.put("b", "hello");
+        logger.info(FastJsonUtil.toPrettyJSONString(map));
+        List<NameValuePair> list = null;
+        list = objToParamList(map);
+        System.out.println(FastJsonUtil.toPrettyJSONString(list));
+    }
 }

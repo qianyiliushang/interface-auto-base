@@ -1,9 +1,10 @@
 group 'com.zombie'
-version '1.2.32'
+version '1.2.35'
 
 
 apply plugin: 'java'
 apply plugin: 'maven'
+apply plugin: 'idea'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
@@ -17,6 +18,7 @@ allprojects {
             url "http://192.168.16.214:8081/repository/maven-public/"
         }
         mavenCentral()
+        jcenter()
     }
 }
 
@@ -41,7 +43,8 @@ dependencies {
             "ru.yandex.qatools.allure:allure-testng-adaptor:1.5.0-RC1",
             'org.dom4j:dom4j:2.0.0',
             'org.apache.httpcomponents:httpclient:4.5.2',
-            'org.apache.httpcomponents:httpmime:4.5.2'
+            'org.apache.httpcomponents:httpmime:4.5.2',
+            'commons-beanutils:commons-beanutils:1.9.2'
     )
     testCompile(
 
@@ -107,5 +110,12 @@ task javadocJar(type: Jar) {
 artifacts {
     archives sourcesJar
     archives javadocJar
+}
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
 }
 
