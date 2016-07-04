@@ -8,7 +8,7 @@ import java.net.URLEncoder;
 import java.util.List;
 
 /**
- * 一些常用的未他组工具类集合
+ * 一些常用的未分组工具类集合
  */
 
 public class CommonUtils {

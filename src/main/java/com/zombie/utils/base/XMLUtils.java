@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * 解析XML
+ * 解析XML,TBD
  */
 
 public class XMLUtils {

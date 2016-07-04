@@ -1,4 +1,4 @@
 /**
- * HTTP基础类包
+ * HTTP基础请求类包
  */
 package com.zombie.base;

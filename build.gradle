@@ -1,5 +1,5 @@
 group 'com.zombie'
-version '1.2.35'
+version '1.2.36'
 
 
 apply plugin: 'java'
@@ -8,9 +8,12 @@ apply plugin: 'idea'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
-
+[compileJava, javadoc, compileTestJava]*.options*.encoding = 'UTF-8'
+javadoc.options.windowTitle = "接口自动化测试文档"
+javadoc.options.docTitle = "接口自动化测试文档"
 configurations {
     agent
+    jaxDoclet
 }
 allprojects {
     repositories {
@@ -51,9 +54,6 @@ dependencies {
     )
 }
 
-javadoc {
-    options.charSet = 'UTF-8'
-}
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.13'
@@ -118,4 +118,7 @@ idea {
         downloadSources = true
     }
 }
+
+
+
 

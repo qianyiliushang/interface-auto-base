@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * 使用HttpUrlConnection发送各种请求
+ * 使用HttpUrlConnection发送各种请求,后期需要重构
  */
 public class HttpHelper {
     private static Logger logger = LoggerFactory.getLogger(HttpHelper.class);
