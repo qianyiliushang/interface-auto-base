@@ -7,15 +7,9 @@ import com.zombie.http.HttpHelper;
 import com.zombie.utils.base.RandomUtils;
 import com.zombie.utils.encrypt.Base64Util;
 import com.zombie.utils.encrypt.MD5Util;
-import com.zombie.utils.json.FastJsonUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -213,11 +207,11 @@ public class RegisterUtils {
     }
 
     public static void main(String[] args) {
-        //System.out.println(applyCapchaCode(RandomUtils.getTelNum()));
+        System.out.println(applyCapchaCode(RandomUtils.getTelNum()));
         //System.out.println(userRegister("17717064445"));
         //System.out.println(getCid("17717064445", "password"));
 
-        List<Map<String, Object>> resultList = new ArrayList<>();
+       /* List<Map<String, Object>> resultList = new ArrayList<>();
 
         for (int i = 0; i < 100; i++) {
             String number = RandomUtils.getSpecPhoneNumber();
@@ -242,7 +236,7 @@ public class RegisterUtils {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
 
         // String number = RandomUtils.getTelNum();
         // String number = "13204754205";

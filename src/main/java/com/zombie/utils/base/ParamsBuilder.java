@@ -202,8 +202,10 @@ public class ParamsBuilder {
                     if (result.length() > 0) {
                         result.append("&");
                     }
+                    //result.append(entry.getKey()).append("=").append(entry.getValue().toString());
                     try {
                         result.append(entry.getKey()).append("=").append(URLEncoder.encode(entry.getValue().toString(), "UTF-8"));
+                        //result.append(entry.getKey()).append("=").append(URLEncoder.encode(entry.getValue().toString(), "UTF-8"));
                     } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                     }

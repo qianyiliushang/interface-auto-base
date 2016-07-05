@@ -1,18 +1,16 @@
 package com.zombie.test;
 
-import com.zombie.bean.GetBrandRequest;
 import com.zombie.bean.SimpleEnum;
 import com.zombie.utils.base.CommonUtils;
-import com.zombie.utils.base.ParamsBuilder;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.*;
 
 /**
  *
@@ -53,6 +51,20 @@ public class CommonUtilsTest {
         for (int i = 0; i < ss.length; i++) {
             System.out.println(ss[i]);
         }
+    }
+
+    public void listToString() {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        StringBuilder sb = new StringBuilder();
+        for (Integer i:list){
+            if (sb.length()>0){
+                sb.append(",");
+            }
+            sb.append(i);
+        }
+        System.out.println(sb.toString());
     }
 
 
