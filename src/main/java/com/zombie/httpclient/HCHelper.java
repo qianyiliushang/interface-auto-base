@@ -17,6 +17,9 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.conn.ssl.SSLContexts;
+import org.apache.http.conn.ssl.TrustSelfSignedStrategy;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -50,8 +53,10 @@ public class HCHelper {
         return HttpClients.createDefault();
     }
 
-    private static CloseableHttpClient getCustomedClient() {
-        HttpClientBuilder builder = HttpClients.custom();
+    private static CloseableHttpClient getCustomedClient() throws Exception {
+        HttpClientBuilder builder = HttpClients.custom()
+                .setSSLSocketFactory(new SSLConnectionSocketFactory(SSLContexts.custom()
+                                                                            .loadTrustMaterial(null, new TrustSelfSignedStrategy()).build()));
         return builder.build();
     }
 
@@ -70,7 +75,7 @@ public class HCHelper {
         logger.info("request url:\n{}", url);
         logger.info("request body is:\n{}", GsonUtils.parseJson(request));
         String requestStr = ParamsBuilder.getFormData(request);
-        logger.info("request form: {}", requestStr);
+        //logger.info("request form: {}", requestStr);
         StringEntity entity = new StringEntity(requestStr, CHARSET);
         entity.setContentType("application/x-www-form-urlencoded");
         post.setEntity(entity);
@@ -361,7 +366,12 @@ public class HCHelper {
      * @return json格式的响应信息, 如果http报错, 直接返回HTTP STATUS CODE及 ERROR STACKTRACE
      */
     private static JSONObject send(HttpUriRequest request) {
-        CloseableHttpClient client = getClient();
+        CloseableHttpClient client = null;
+        try {
+            client = getCustomedClient();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         CloseableHttpResponse response = null;
         try {
             response = client.execute(request);
@@ -405,7 +415,12 @@ public class HCHelper {
 
     private static JSONObject mediaDownload(HttpUriRequest request, String savePath) {
         String url = request.getURI().toString();
-        CloseableHttpClient client = getClient();
+        CloseableHttpClient client = null;
+        try {
+            client = getCustomedClient();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         CloseableHttpResponse response = null;
         HttpContext context = new BasicHttpContext();
         if (savePath == null || savePath.equals("")) {

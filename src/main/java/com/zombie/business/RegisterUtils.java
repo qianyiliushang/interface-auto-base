@@ -48,6 +48,7 @@ public class RegisterUtils {
         register.setNumber(phoneNumber);
 
         request.setReqData(register);
+        request.setQ(CommonBody.REGISTER);
 
         logger.info("request params:{}", request);
 
@@ -78,6 +79,8 @@ public class RegisterUtils {
         applyCapchaCode.setTime(time);
         applyCapchaCode.setKey(key);
         reqDataRequest.setReqData(applyCapchaCode);
+
+
         return HttpHelper.doGetWithoutConfig(UrlConstants.IMOBASE, UrlConstants.SOCIAL, reqDataRequest);
     }
 
@@ -206,52 +209,5 @@ public class RegisterUtils {
         return getCidAndToken(phoneNumber, password);
     }
 
-    public static void main(String[] args) {
-        System.out.println(applyCapchaCode(RandomUtils.getTelNum()));
-        //System.out.println(userRegister("17717064445"));
-        //System.out.println(getCid("17717064445", "password"));
 
-       /* List<Map<String, Object>> resultList = new ArrayList<>();
-
-        for (int i = 0; i < 100; i++) {
-            String number = RandomUtils.getSpecPhoneNumber();
-            String password = RandomUtils.generateMixString(6);
-            System.out.println("regist result" + corpRegist(number, password).toString());
-            corpRegist(number, password);
-            Map<String, Object> result = getCidAndToken(number, password);
-            result.remove("token");
-            result.put("phoneNumber", number);
-            result.put("password", password);
-
-            resultList.add(result);
-        }
-        String rootPath = System.getProperty("user.dir");
-        File file = new File(rootPath, "testdata.txt");
-        try {
-            FileOutputStream fileOutputStream = new FileOutputStream(file);
-            fileOutputStream.write(FastJsonUtil.toPrettyJSONString(resultList).getBytes());
-            fileOutputStream.flush();
-            fileOutputStream.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
-
-        // String number = RandomUtils.getTelNum();
-        // String number = "13204754205";
-        //String password = "password";
-        // corpRegist(number);
-        // getCidAndToken(number, password);
-
-        // System.out.println(getDefaultCid());
-        // System.out.println(getDefaultToken());
-
-        //System.out.println(FastJsonUtil.toPrettyJSONString(getCidAndToken(AccountConstant.NUMBER, AccountConstant.PASSWORD)));
-        // Map<String, Object> result = RegisterUtils.getCidAndToken("15706167938", "passw0rd");
-        //Map<String, Object> userMap;
-        //userMap = result;
-        // System.out.println(FastJsonUtil.toPrettyJSONString(userMap));
-
-    }
 }
