@@ -193,6 +193,7 @@ public class ParamsBuilder {
      */
     public static String getFormData(Object object) {
         Map<String, Object> formMap = FastJsonUtil.objectToMap(object);
+        //Map<String, Object> formMap = GsonUtils.jsonObjectToMap(object);
         final StringBuilder result = new StringBuilder();
         if (ValidateHelper.isNotEmptyMap(formMap)) {
             Iterator<Map.Entry<String, Object>> iterator = formMap.entrySet().iterator();

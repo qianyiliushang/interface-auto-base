@@ -133,6 +133,36 @@ public class HCHelper {
     }
 
     /**
+     * 对于返回对象不是json的接口,调用此方法,直接返回字符串
+     *
+     * @param request 请求数据
+     *
+     * @return 响应body
+     */
+    public static String post(BaseRequest request) {
+        String url = request.url();
+        HttpPost post = new HttpPost(url);
+        post.setConfig(getCustromRequestConfig());
+        logger.info("request url:\n{}", url);
+        logger.info("request body is:\n{}", GsonUtils.parseJson(request));
+        String requestStr = ParamsBuilder.getFormData(request);
+        //logger.info("request form: {}", requestStr);
+        StringEntity entity = new StringEntity(requestStr, CHARSET);
+        entity.setContentType("application/x-www-form-urlencoded");
+        post.setEntity(entity);
+        try {
+            CloseableHttpClient client = getCustomedClient();
+            CloseableHttpResponse response = client.execute(post);
+            return EntityUtils.toString(response.getEntity(), CHARSET);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
+
+    }
+
+    /**
      * 发送json请求
      *
      * @param request 请求数据
