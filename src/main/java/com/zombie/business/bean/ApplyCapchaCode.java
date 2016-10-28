@@ -17,6 +17,25 @@ public class ApplyCapchaCode {
     //获取验证码计数器，后端根据这个数字的奇、偶来选择不同的短信通道
     private String counter;
 
+    private String key;
+    private String time;
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
     public String getNumber() {
         return number;
     }

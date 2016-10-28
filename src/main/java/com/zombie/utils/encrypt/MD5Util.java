@@ -5,6 +5,9 @@ import java.io.InputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * MD5编码
+ */
 
 public class MD5Util {
     /**

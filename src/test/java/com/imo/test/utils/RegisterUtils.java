@@ -135,6 +135,7 @@ public class RegisterUtils {
         //System.out.println(applyCapchaCode(RandomUtils.getTelNum()));
         //System.out.println(userRegister(RandomUtils.getTelNum()).toString());
         System.out.println(corpRegist(RandomUtils.getTelNum()).toString());
+
         // String number = RandomUtils.getTelNum();
         //String number = "13102823263";
         // String password = "password";

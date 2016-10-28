@@ -79,7 +79,11 @@ public class RandomUtils {
         for (int i = 0; i < length; i++) {
             sb.append(NUMBER_CHAR.charAt(random.nextInt(NUMBER_CHAR.length())));
         }
-        return sb.toString();
+        String result = sb.toString();
+        if (result.startsWith("0")) {
+            result = result.replaceFirst("0", "1");
+        }
+        return result;
     }
 
     /**
@@ -105,6 +109,18 @@ public class RandomUtils {
     public static String getTelNum() {
         int index = getPhoneNum(0, telFirst.length - 1);
         String first = telFirst[index];
+        String second = String.valueOf(getPhoneNum(1, 888) + 10000).substring(1);
+        String thrid = String.valueOf(getPhoneNum(1, 9100) + 10000).substring(1);
+        return first + second + thrid;
+    }
+
+    /**
+     * 生成191开头的手机号
+     *
+     * @return
+     */
+    public static String getSpecPhoneNumber() {
+        String first = "191";
         String second = String.valueOf(getPhoneNum(1, 888) + 10000).substring(1);
         String thrid = String.valueOf(getPhoneNum(1, 9100) + 10000).substring(1);
         return first + second + thrid;
@@ -136,6 +152,6 @@ public class RandomUtils {
     }
 
     public static void main(String[] args) {
-        System.out.println(getRandomJianHan(10));
+        System.out.println(getSpecPhoneNumber());
     }
 }

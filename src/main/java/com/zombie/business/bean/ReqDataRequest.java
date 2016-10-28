@@ -8,6 +8,7 @@ public class ReqDataRequest {
     private String q;
     private Object reqData;
 
+
     public String getQ() {
         return q;
     }

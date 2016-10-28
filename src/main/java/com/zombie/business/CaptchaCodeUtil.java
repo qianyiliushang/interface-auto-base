@@ -1,5 +1,6 @@
 package com.zombie.business;
 
+import com.zombie.utils.base.RegexUtils;
 import com.zombie.utils.base.StringUtils;
 
 import java.io.IOException;
@@ -39,7 +40,7 @@ public class CaptchaCodeUtil {
             inputStream = httpURLConnection.getInputStream();
             byte[] readStream = StringUtils.readStream(inputStream);
             String responseStr = new String(readStream, "UTF-8");
-            captchaCode = responseStr.substring(11, 15);
+            captchaCode = RegexUtils.getNumberInString(responseStr);
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -53,4 +54,5 @@ public class CaptchaCodeUtil {
         String code = getCaptchaCode("13024178285");
         System.out.println(code);
     }
+
 }

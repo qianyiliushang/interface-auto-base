@@ -5,7 +5,8 @@ import com.jayway.restassured.path.json.JsonPath;
 import com.zombie.business.bean.*;
 import com.zombie.http.HttpHelper;
 import com.zombie.utils.base.RandomUtils;
-import com.zombie.utils.json.FastJsonUtil;
+import com.zombie.utils.encrypt.Base64Util;
+import com.zombie.utils.encrypt.MD5Util;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,14 +23,18 @@ public class RegisterUtils {
     private static Logger logger = LogManager.getLogger(RegisterUtils.class);
 
     public static String userRegister(String number) {
+        return userRegister(number, "password");
+    }
+
+    public static String userRegister(String phoneNumber, String password) {
         ReqDataRequest request = new ReqDataRequest();
         request.setQ(CommonBody.REGISTER);
 
-        JsonPath jsonPath = JsonPath.from(applyCapchaCode(number));
+        JsonPath jsonPath = JsonPath.from(applyCapchaCode(phoneNumber));
         if (!jsonPath.get("retCode").equals("0")) {
             logger.error("apply capchacode error: {}", jsonPath.toString());
         }
-        String code = CaptchaCodeUtil.getCaptchaCode(number);
+        String code = CaptchaCodeUtil.getCaptchaCode(phoneNumber);
 
         UserRegister register = new UserRegister();
         register.setCode(code);
@@ -38,25 +43,68 @@ public class RegisterUtils {
         register.setType("2");
         register.setReqId(String.valueOf(System.currentTimeMillis()));
         register.setImo_channel_name("test");
-        register.setPwd("passw0rd");
+        register.setPwd(password);
         register.setVersion("test");
-        register.setNumber(number);
+        register.setNumber(phoneNumber);
 
         request.setReqData(register);
+        request.setQ(CommonBody.REGISTER);
 
         logger.info("request params:{}", request);
 
         return HttpHelper.doGetWithoutConfig(UrlConstants.IMOBASE, UrlConstants.SOCIAL, request);
     }
 
+    /**
+     * 默认提供注册类型
+     *
+     * @param number 手机号
+     *
+     * @return
+     */
     public static String applyCapchaCode(String number) {
         ApplyCapchaCode applyCapchaCode = new ApplyCapchaCode();
         ReqDataRequest reqDataRequest = new ReqDataRequest();
+
+        String time = String.valueOf(System.currentTimeMillis());
+        String timeMd5 = MD5Util.encode(time);
+        String numberMd5 = MD5Util.encode(number);
+        String key = Base64Util.encode(numberMd5 + timeMd5);
+
         reqDataRequest.setQ(CommonBody.GETVALIDATECODE);
         applyCapchaCode.setCounter("1");
         applyCapchaCode.setNumber(number);
         applyCapchaCode.setReqId(String.valueOf(System.currentTimeMillis()));
         applyCapchaCode.setType("1");
+        applyCapchaCode.setTime(time);
+        applyCapchaCode.setKey(key);
+        reqDataRequest.setReqData(applyCapchaCode);
+
+
+        return HttpHelper.doGetWithoutConfig(UrlConstants.IMOBASE, UrlConstants.SOCIAL, reqDataRequest);
+    }
+
+    /**
+     * @param number 手机号
+     * @param type   1-注册，2-重置密码，3-绑定手机号（非真正的绑定，只是更新手机信息），4-登录
+     *
+     * @return
+     */
+    public static String applyCpchaCode(String number, String type) {
+        ApplyCapchaCode applyCapchaCode = new ApplyCapchaCode();
+        ReqDataRequest reqDataRequest = new ReqDataRequest();
+
+        String time = String.valueOf(System.currentTimeMillis());
+        String timeMd5 = MD5Util.encode(time);
+        String numberMd5 = MD5Util.encode(number);
+        String key = Base64Util.encode(numberMd5 + timeMd5);
+        reqDataRequest.setQ(CommonBody.GETVALIDATECODE);
+        applyCapchaCode.setCounter("1");
+        applyCapchaCode.setNumber(number);
+        applyCapchaCode.setReqId(String.valueOf(System.currentTimeMillis()));
+        applyCapchaCode.setType(type);
+        applyCapchaCode.setTime(time);
+        applyCapchaCode.setKey(key);
         reqDataRequest.setReqData(applyCapchaCode);
         return HttpHelper.doGetWithoutConfig(UrlConstants.IMOBASE, UrlConstants.SOCIAL, reqDataRequest);
     }
@@ -109,12 +157,15 @@ public class RegisterUtils {
 
         String response = HttpHelper.doGetWithoutConfig(UrlConstants.BASEIP, UrlConstants.OPENPLATFORM, jsontextRequest);
         JsonPath jsonPath = JsonPath.from(response);
-        List<Map<String, Object>> cidList = jsonPath.getList("jsontext.cid");
+        //  logger.info("response of login:\n{}", jsonPath.prettyPrint());
+        List<Map<String, String>> cidList = jsonPath.getList("jsontext.cid");
         if (cidList.size() != 0) {
             resultMap.put("cid", cidList.get(0).get("cid"));
         }
         resultMap.put("token", jsonPath.get("jsontext.token"));
         resultMap.put("uid", jsonPath.get("jsontext.uid"));
+        // resultMap.put("uAccout", jsonPath.get("uAcount"));
+        resultMap.put("cAccount", jsonPath.getString("jsontext.cAccount"));
         return resultMap;
     }
 
@@ -153,24 +204,10 @@ public class RegisterUtils {
 
     }
 
-    public static void main(String[] args) {
-        //System.out.println(applyCapchaCode(RandomUtils.getTelNum()));
-       // System.out.println(userRegister(RandomUtils.getTelNum()).toString());
-        //System.out.println(corpRegist(RandomUtils.getTelNum(), "passw0rd").toString());
-        // String number = RandomUtils.getTelNum();
-        // String number = "13204754205";
-        //String password = "password";
-        // corpRegist(number);
-        // getCidAndToken(number, password);
-
-        // System.out.println(getDefaultCid());
-        // System.out.println(getDefaultToken());
-
-        //System.out.println(FastJsonUtil.toPrettyJSONString(getCidAndToken(AccountConstant.NUMBER, AccountConstant.PASSWORD)));
-        Map<String, Object> result = RegisterUtils.getCidAndToken("15706167938", "passw0rd");
-        Map<String, Object> userMap;
-        userMap = result;
-        System.out.println(FastJsonUtil.toPrettyJSONString(userMap));
-
+    public static Map<String, Object> userRegistAndGetUid(String phoneNumber, String password) {
+        userRegister(phoneNumber, password);
+        return getCidAndToken(phoneNumber, password);
     }
+
+
 }

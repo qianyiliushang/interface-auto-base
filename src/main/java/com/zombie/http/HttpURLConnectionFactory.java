@@ -11,7 +11,7 @@ import java.net.ProtocolException;
 import java.net.URL;
 
 /**
- *
+ * HttpURLConnection工厂,需要重构
  */
 
 public class HttpURLConnectionFactory {
